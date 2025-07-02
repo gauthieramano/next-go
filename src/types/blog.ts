@@ -9,9 +9,11 @@ export type Author = {
 };
 
 export type Blog = {
-  _id: number;
   title: string;
-  slug?: any;
+  slug: {
+    current: string;
+    _type: string;
+  };
   metadata?: string;
   body?: PortableTextBlock[];
   mainImage?: any;

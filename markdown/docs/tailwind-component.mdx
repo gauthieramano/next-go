@@ -4,7 +4,7 @@ description: How to use Tailwind UI Components from GrayGrids
 date: 2023-1-21
 ---
 
-## Basic Use and Download
+# Basic Usage and Download
 
 GrayGrids offers essential Tailwind UI components with the All-Access Plan. You can use them by copy-pasting them to your existing Tailwind projects, or you can build completely new projects with them.
 
@@ -14,39 +14,39 @@ You can also download offline files from the downloads section of your account.
 
 We can use GrayGrids with an existing Tailwind project or we can start from scratch. We will go walk you through both of the processes.
 
-### 1. Starting from scratch
+### Starting from scratch
 
 We are going to show you how to start a project with GrayGrids from scratch. We first will set up a Tailwind CSS project then we will include GrayGrids in it.
 
 Here are the steps you can take to start a GrayGrids project from scratch:
 
-**Step#1**: Install Tailwind and generate the config file.
+1. Install Tailwind and generate the config file.
 
 ```sh
 npm install -D tailwindcss
 npx tailwindcss init
 ```
 
-**Step#2**: Install TailGrids
+2. Install TailGrids
 
 ```sh
 npm i tailgrids
 ```
 
-**Step#3**: Update the config file with GrayGrids config.
+3. Update the config file with GrayGrids config.
 
 ```js
 module.exports = {
-  content: ["./*.html", "./ecommerce/*.html", "./assets/**/*.js"],
+  content: ['./*.html', './ecommerce/*.html', './assets/**/*.js'],
   theme: {},
   variants: {
     extend: {},
   },
-  plugins: [require("tailgrids/plugin")],
+  plugins: [require('tailgrids/plugin')],
 };
 ```
 
-**Step#4**: Add Tailwind CSS directives to your CSS. Create a CSS file named **input.css** in the root of your project or the **src** directory. Then include this code at the top of the file.
+4. Add Tailwind CSS directives to your CSS. Create a CSS file named **input.css** in the root of your project or the **src** directory. Then include this code at the top of the file.
 
 ```css
 @tailwind base;
@@ -54,14 +54,14 @@ module.exports = {
 @tailwind utilities;
 ```
 
-**Step#5**: Generate the CSS file with the build command.
+5. Generate the CSS file with the build command.
 
 To do that first we will have to add the script to the **package.json** file. Make sure you’ve provided the correct path of the **input.css** file. if it’s in the root keep the script as is, if it’s under the **src** include that before the slash.
 
 ```json
 "scripts": {
     "build": "npx tailwindcss -i ./input.css -o ./dist/output.css --watch"
-  },
+}
 ```
 
 Then we will have to run the build command:
@@ -70,7 +70,7 @@ Then we will have to run the build command:
 npm run build
 ```
 
-**Step#6**: Include the compiled CSS file in the Html file. We’ve compiled the file in the **dist** folder.
+6. Include the compiled CSS file in the Html file. We’ve compiled the file in the **dist** folder.
 
 ```html
 <!DOCTYPE html>
@@ -88,8 +88,6 @@ npm run build
 
 Now you can just copy and paste the components from GrayGrids and build websites.
 
-### 1. Use GrayGrids with the existing Tailwind Project.
-
-……….
+### Use GrayGrids with the existing Tailwind Project.
 
 Our Tailwind components are powered by [TailGrids](https://tailgrids.com/), you can learn more about TailGrids from [TailGrids Docs](https://tailgrids.com/docs) too.

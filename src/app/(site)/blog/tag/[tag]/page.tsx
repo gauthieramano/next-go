@@ -2,13 +2,14 @@ import SingleBlog from "@/components/Blog/SingleBlog";
 import { getPostByTag } from "@/sanity/sanity-utils";
 
 type Props = {
-  params: { tag: string };
+  params: Promise<{ tag: string }>;
 };
 
 const siteName = process.env.SITE_NAME;
 const authorName = process.env.AUTHOR_NAME;
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata(props: Props) {
+  const params = await props.params;
   const { tag } = params;
 
   const formattedTag = tag.charAt(0).toUpperCase() + tag.slice(1);
@@ -33,22 +34,16 @@ export async function generateMetadata({ params }: Props) {
   }
 }
 
-export default async function TagSlugPage({ params }: Props) {
+export default async function TagSlugPage(props: Props) {
+  const params = await props.params;
   const { tag } = params;
   const posts = await getPostByTag(tag);
 
   return (
-    <>
-      {/* <!-- ===== Blog Grid Start ===== --> */}
-      <section className="pt-[130px]">
-        <div className="px-4 xl:container">
-          <div className="-mx-4 flex flex-wrap">
-            {posts.length > 0 &&
-              posts.map((post, key) => <SingleBlog key={key} blog={post} />)}
-          </div>
-        </div>
-      </section>
-      {/* <!-- ===== Blog Grid End ===== --> */}
-    </>
+    <main className="container grid gap-x-8 gap-y-10 pt-[130px] min-[400px]:grid-cols-[repeat(auto-fill,minmax(400px,1fr))]">
+      {posts.map((post) => (
+        <SingleBlog key={post.slug.current} blog={post} />
+      ))}
+    </main>
   );
 }

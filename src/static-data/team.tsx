@@ -1,74 +1,73 @@
 import { Team } from "@/types/team";
-import { v4 as uuid } from "uuid";
 
 export const teamData: Team[] = [
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     name: "Olivia Andrium",
     designation: "Project Manager",
-    image: "/images/team/image-1.jpg",
+    image: "/images/hero/image-1.jpg",
     socialLinks: [
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         name: "Facebook",
-        link: "/",
+        link: "/"
       },
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         name: "Twitter",
-        link: "/",
+        link: "/"
       },
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         name: "Linkedin",
-        link: "/",
-      },
-    ],
+        link: "/"
+      }
+    ]
   },
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     name: "Jemse Kemorun",
     designation: "Frontend Developer",
     image: "/images/team/image-2.jpg",
     socialLinks: [
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         name: "Facebook",
-        link: "/",
+        link: "/"
       },
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         name: "Twitter",
-        link: "/",
+        link: "/"
       },
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         name: "Linkedin",
-        link: "/",
-      },
-    ],
+        link: "/"
+      }
+    ]
   },
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     name: "Avi Pestarica",
     designation: "Product Designer",
-    image: "/images/team/image-3.jpg",
+    image: "/images/testimonial/image-1.jpg",
     socialLinks: [
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         name: "Facebook",
-        link: "/",
+        link: "/"
       },
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         name: "Twitter",
-        link: "/",
+        link: "/"
       },
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         name: "Linkedin",
-        link: "/",
-      },
-    ],
-  },
+        link: "/"
+      }
+    ]
+  }
 ];

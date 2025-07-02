@@ -10,12 +10,14 @@ import Pricing from "@/components/Pricing";
 import Support from "@/components/Support";
 import Team from "@/components/Team";
 import { Metadata } from "next";
+import { integrations, messages } from "../../../integrations.config";
 
 const siteName = process.env.SITE_NAME;
 
 export const metadata: Metadata = {
   title: `Next.js Starter for Business Sites | ${siteName}`,
-  description: "Next.js starter for your next - Startup, Business, Agency or SaaS Website. Comes with refreshing design, integrations and everything you need to kickstart your next web project",
+  description:
+    "Next.js starter for your next - Startup, Business, Agency or SaaS Website. Comes with refreshing design, integrations and everything you need to kickstart your next web project",
 };
 
 export default function Home() {
@@ -29,7 +31,7 @@ export default function Home() {
       <Testimonials />
       <Brands />
       <Pricing />
-      <HomeBlogSection />
+      {integrations?.isSanityEnabled && <HomeBlogSection />}
       <Support />
       <CallToAction />
     </>

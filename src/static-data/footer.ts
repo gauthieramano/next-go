@@ -1,59 +1,58 @@
 import { FooterLink } from "@/types/footer";
-import { v4 as uuid } from "uuid";
 
 export const footerLinks: FooterLink[] = [
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     title: "Home",
     href: "/",
-    external: false,
+    external: false
   },
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     title: "Products",
     href: "/",
-    external: false,
+    external: false
   },
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     title: "Careers",
     href: "/",
     external: false,
     badge: {
-      text: "Hiring",
-    },
+      text: "Hiring"
+    }
   },
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     title: "Pricing",
     href: "/",
-    external: false,
-  },
+    external: false
+  }
 ];
 
 export const footerLinksTwo: FooterLink[] = [
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     title: "Company",
     href: "/",
-    external: false,
+    external: false
   },
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     title: "Press Media",
     href: "/",
-    external: false,
+    external: false
   },
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     title: "Our Blog",
     href: "/blog",
-    external: false,
+    external: false
   },
   {
-    id: uuid(),
-    title: "Contact Us",
-    href: "/contact",
-    external: false,
-  },
+    id: crypto.randomUUID(),
+    title: "Account",
+    href: "/auth/signin",
+    external: false
+  }
 ];

@@ -17,7 +17,7 @@ export default function Testimonials() {
         />
 
         <div className="w-full px-4">
-          <div className="relative z-10 overflow-hidden rounded bg-cover bg-center px-10 pb-28 pt-[60px] drop-shadow-light dark:drop-shadow-none sm:px-14 md:p-[70px] md:pb-28 lg:pb-[70px]">
+          <div className="relative z-10 overflow-hidden rounded-sm bg-cover bg-center px-10 pb-28 pt-[60px] drop-shadow-light dark:drop-shadow-none sm:px-14 md:p-[70px] md:pb-28 lg:pb-[70px]">
             <div className="absolute left-0 top-0 -z-10 h-full w-full bg-noise-pattern bg-cover bg-center opacity-10 dark:opacity-40"></div>
             <div className="absolute bottom-0 left-1/2 -z-10 -translate-x-1/2">
               <svg

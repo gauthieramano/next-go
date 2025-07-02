@@ -1,11 +1,18 @@
 "use client";
-
 import axios from "axios";
+import toast from "react-hot-toast";
+import { integrations, messages } from "../../../integrations.config";
 import SingleOffer from "./SingleOffer";
 
 export default function SinglePricing({ price }: any) {
   const handleSubscription = async (e: any) => {
     e.preventDefault();
+
+    if (!integrations?.isSanityEnabled) {
+      toast.error(messages?.sanity);
+      return;
+    }
+
     const { data } = await axios.post(
       "/api/payment",
       {
@@ -47,7 +54,7 @@ export default function SinglePricing({ price }: any) {
             Lorem ipsum dolor sit ametion consectetur adipisc elit.
           </p>
         </div>
-        <div className="space-y-4 px-6 pb-[60px] pt-10 text-left sm:px-10 md:px-8 lg:px-10 xl:px-20">
+        <ul className="space-y-4 px-6 pb-[60px] pt-10 text-left sm:px-10 md:px-8 lg:px-10 xl:px-20">
           {price?.nickname === "Starter" && (
             <>
               <SingleOffer text="100 GB Storage" status="active" />
@@ -75,10 +82,10 @@ export default function SinglePricing({ price }: any) {
               <SingleOffer text="Custom Branding Strategy" status="active" />
             </>
           )}
-        </div>
+        </ul>
         <button
           onClick={handleSubscription}
-          className={`inline-flex items-center rounded px-8 py-[14px] font-heading text-base text-white duration-200 ${price?.nickname === "Professional" ? "bg-primary hover:bg-primary/90" : "bg-dark hover:bg-dark/90"}`}
+          className={`inline-flex items-center rounded-sm px-8 py-[14px] font-heading text-base text-white duration-200 ${price?.nickname === "Professional" ? "bg-primary hover:bg-primary/90" : "bg-dark hover:bg-dark/90"}`}
         >
           Join This Plan
           <span className="pl-3">

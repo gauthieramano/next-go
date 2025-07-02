@@ -13,7 +13,7 @@ export default function Pricing() {
           paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus."
         />
 
-        <div className="relative z-10 flex flex-wrap justify-center overflow-hidden rounded drop-shadow-light dark:drop-shadow-none">
+        <div className="relative z-10 flex flex-wrap justify-center overflow-hidden rounded-sm drop-shadow-light dark:drop-shadow-none">
           <div className="absolute left-0 top-0 -z-10 h-full w-full bg-noise-pattern bg-cover bg-center opacity-10 dark:opacity-40"></div>
           <div className="absolute bottom-0 left-1/2 -z-10 -translate-x-1/2">
             <svg
@@ -68,10 +68,9 @@ export default function Pricing() {
               </defs>
             </svg>
           </div>
-          {pricingData &&
-            pricingData.map((price, key) => (
-              <SinglePricing price={price} key={key} />
-            ))}
+          {pricingData.map((price) => (
+            <SinglePricing price={price} key={price.id} />
+          ))}
         </div>
 
         <div className="pt-12 text-center">

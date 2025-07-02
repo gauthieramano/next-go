@@ -1,11 +1,12 @@
 "use client";
 
+import "@/styles/globals.css";
+
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
-import "../../styles/globals.css";
 import AuthProvider from "../context/AuthContext";
 import ToasterContext from "../context/ToastContext";
 
@@ -17,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <NextTopLoader
           color="#006BFF"
