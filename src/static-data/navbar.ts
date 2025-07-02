@@ -1,77 +1,76 @@
 import { NavbarItem } from "@/types/navbar";
-import { v4 as uuid } from "uuid";
 
 export const navbarData: NavbarItem[] = [
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     title: "Features",
     href: "#features",
-    external: false,
+    external: false
   },
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     title: "About",
     href: "#about",
-    external: false,
+    external: false
   },
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     title: "Portfolio",
     href: "#portfolio",
-    external: false,
+    external: false
   },
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     title: "Pricing",
     href: "#pricing",
-    external: false,
+    external: false
   },
   {
-    id: uuid(),
+    id: crypto.randomUUID(),
     title: "Pages",
     submenu: [
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         title: "Home",
         href: "/",
-        external: false,
+        external: false
       },
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         title: "Docs",
         href: "/docs",
-        external: false,
+        external: false
       },
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         title: "Support",
         href: "/support",
-        external: false,
+        external: false
       },
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         title: "Blog",
         href: "/blog",
-        external: false,
+        external: false
       },
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         title: "Sign in",
         href: "/auth/signin",
-        external: false,
+        external: false
       },
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         title: "Sign up",
         href: "/auth/signup",
-        external: false,
+        external: false
       },
       {
-        id: uuid(),
+        id: crypto.randomUUID(),
         title: "Error 404",
         href: "/error",
-        external: false,
-      },
-    ],
-  },
+        external: false
+      }
+    ]
+  }
 ];

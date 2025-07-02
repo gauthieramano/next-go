@@ -11,7 +11,7 @@ export default function About() {
           paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus."
         />
 
-        <div className=" relative z-10 overflow-hidden rounded px-8 pb-8 pt-0 md:px-[70px] md:pb-[70px] lg:px-[60px] lg:pb-[60px] xl:px-[70px] xl:pb-[70px]">
+        <div className=" relative z-10 overflow-hidden rounded-sm px-8 pb-8 pt-0 md:px-[70px] md:pb-[70px] lg:px-[60px] lg:pb-[60px] xl:px-[70px] xl:pb-[70px]">
           <div className="absolute left-0 top-0 -z-10 h-full w-full bg-noise-pattern bg-cover bg-center opacity-10 dark:opacity-40"></div>
           <div className="absolute bottom-0 left-1/2 -z-10 -translate-x-1/2">
             <svg

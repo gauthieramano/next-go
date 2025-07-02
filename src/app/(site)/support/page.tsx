@@ -11,12 +11,8 @@ export const metadata: Metadata = {
 
 export default function SupportPage() {
   return (
-    <>
-      <section className="pt-10">
-        <div className="px-4 xl:container">
-          <Support />
-        </div>
-      </section>
-    </>
+    <div className="px-4 pt-10 xl:container">
+      <Support />
+    </div>
   );
 }

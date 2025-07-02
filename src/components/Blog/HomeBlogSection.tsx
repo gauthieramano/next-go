@@ -1,5 +1,4 @@
 import { getPosts } from "@/sanity/sanity-utils";
-import { Blog } from "@/types/blog";
 import SectionTitle from "../Common/SectionTitle";
 import SingleBlog from "./SingleBlog";
 
@@ -16,9 +15,9 @@ export default async function HomeBlogSection() {
         />
 
         <div className="w-full border-b pb-20 dark:border-[#2E333D]">
-          <div className="-mx-4 flex flex-wrap">
-            {posts.slice(0, 3).map((blog: Blog) => (
-              <SingleBlog blog={blog} key={blog?._id} />
+          <div className="grid gap-x-8 gap-y-10 min-[400px]:grid-cols-[repeat(auto-fill,minmax(400px,1fr))]">
+            {posts.slice(0, 3).map((blog) => (
+              <SingleBlog blog={blog} key={blog?.slug.current} />
             ))}
           </div>
         </div>
