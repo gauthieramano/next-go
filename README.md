@@ -1,7 +1,7 @@
 # Installing and Configuring Next.js Boilerplate Templates
 
-Installing boilerplate templates are different than ordinary templates, you have to follow the steps strictly without skipping any of them.
-
+Installing boilerplate templates are different than ordinary templates, you have to follow the steps strictly without
+skipping any of them.
 
 1. [Installation](https://nextjstemplates.com/docs/boilerplate#installation)
 2. [Databases Setup](https://nextjstemplates.com/docs/database)
@@ -16,10 +16,10 @@ Installing boilerplate templates are different than ordinary templates, you have
 ---
 
 ### Useful Links
+
 - [Discord Community](https://pimjo.com/community)
 - [Support](https://nextjstemplates.com/support)
 - [Twitter](https://x.com/nextjstemplate)
-
 
 ### Installation
 
@@ -42,14 +42,36 @@ It’ll start the template on http://localhost:3000
 
 ### Deploying on PaaS
 
-If you are using a GitHub repo then you can go with free-of-cost and easy-to-use options like [Vercel](https://vercel.com/), or [Netlify](https://netlify.com/) they offer decent-free tiers for Next.js hosting.
+If you are using a GitHub repo then you can go with free-of-cost and easy-to-use options
+like[Vercel](https://vercel.com/), or[Netlify](https://netlify.com/) they offer decent-free tiers for Next.js hosting.
 
 Make sure to edit build command like this when deploying to Vercel.
 
 ![prisma-vercel](https://nextjstemplates.com/docs/prisma-vercel.png)
 
-Follow the steps below to complete the installation, if you get stuck feel free to open a [support ticket](/support), we will get back to you ASAP.
+Follow the steps below to complete the installation, if you get stuck feel free to open a [support ticket](/support), we
+will get back to you ASAP.
 
-### Update Logs:
-**Version - 1.3**
+### Update Logs
+
+**March 2025 v2.1**
+
+- Upgraded to Tailwind v4 and latest release of Next.js 15
+- Fix peer dependency errors during installation
+- Using tailwind-typography plugin for docs pages
+- Refactor checkbox on auth pages
+- Improved markup, fix hydration errors and all known issues.
+
+**November 2024 v2.0**
+
+- Upgraded to Next.js 15
+
+**November 2024 v1.4**
+
+- Integrated integration enable disable features
+- Integrated Zod for Form validation
+- Added Stripe webhook endpoint
+
+**May 2024 v1.3**
+
 - Fixed Sanity Revalidation issue

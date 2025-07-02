@@ -15,14 +15,14 @@ export default function TabPanel({
     >
       <div className="w-full px-4 lg:w-1/2">
         <div className="relative z-30 mb-14 h-[490px] max-w-[600px] lg:mb-0">
-          <div className="absolute left-0 top-0 aspect-[86/121] w-full max-w-[344px]">
+          <div className="aspect-86/121 absolute left-0 top-0 w-full max-w-[344px]">
             <Image src={image1} alt={`${image1Alt || "image alt text"}`} fill />
           </div>
 
-          <div className="absolute right-0 top-1/2 z-10 aspect-[53/66] w-full max-w-[315px] -translate-y-1/2">
+          <div className="aspect-53/66 absolute right-0 top-1/2 z-10 w-full max-w-[315px] -translate-y-1/2">
             <Image src={image2} alt={`${image2Alt || "image alt text"}`} fill />
 
-            <div className="absolute -left-5 -top-5 -z-10 h-full w-full border border-primary border-opacity-10 bg-primary bg-opacity-5 backdrop-blur-[6px] dark:border-white dark:border-opacity-10 dark:bg-white dark:bg-opacity-10"></div>
+            <div className="border-primary/10 bg-primary/5 absolute -left-5 -top-5 -z-10 h-full w-full border backdrop-blur-[6px] dark:border-white/10 dark:bg-white/10"></div>
           </div>
           <div className="absolute right-0 top-24 z-40">
             <svg
@@ -62,7 +62,7 @@ export default function TabPanel({
       </div>
       <div className="w-full px-4 lg:w-1/2">
         <div className="max-w-[565px] lg:ml-auto">
-          <h2 className="mb-8 font-heading text-2xl font-bold text-dark dark:text-white sm:text-[40px] sm:leading-[50px]">
+          <h2 className="font-heading text-dark mb-8 text-2xl font-bold sm:text-[40px] sm:leading-[50px] dark:text-white">
             {title}
           </h2>
           {children}

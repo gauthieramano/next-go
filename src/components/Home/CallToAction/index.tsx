@@ -2,8 +2,8 @@ export default function CallToAction() {
   return (
     <section id="cta" className="pt-14 sm:pt-20 lg:pt-[130px]">
       <div className="px-4 xl:container">
-        <div className="relative overflow-hidden bg-cover bg-center px-10 py-[60px] drop-shadow-light dark:drop-shadow-none sm:px-[70px]">
-          <div className="absolute left-0 top-0 -z-10 h-full w-full bg-noise-pattern bg-cover bg-center opacity-10 dark:opacity-40"></div>
+        <div className="drop-shadow-light relative overflow-hidden bg-cover bg-center px-10 py-[60px] sm:px-[70px] dark:drop-shadow-none">
+          <div className="bg-noise-pattern absolute left-0 top-0 -z-10 h-full w-full bg-cover bg-center opacity-10 dark:opacity-40"></div>
           <div className="absolute bottom-0 left-1/2 -z-10 -translate-x-1/2">
             <svg
               width="1215"
@@ -61,10 +61,10 @@ export default function CallToAction() {
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-2/3">
               <div className="mx-auto mb-10 max-w-[550px] text-center lg:mb-0 lg:ml-0 lg:text-left">
-                <h2 className="mb-4 font-heading text-xl font-semibold leading-tight text-dark dark:text-white sm:text-[38px]">
+                <h2 className="font-heading text-dark mb-4 text-xl font-semibold leading-tight sm:text-[38px] dark:text-white">
                   Looking for a collaboration? Get Started Today!
                 </h2>
-                <p className="text-base text-dark-text">
+                <p className="text-dark-text text-base">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
               </div>
@@ -73,7 +73,7 @@ export default function CallToAction() {
               <div className="text-center lg:text-right">
                 <a
                   href="#"
-                  className="inline-flex items-center rounded bg-primary px-8 py-[14px] font-heading text-base text-white hover:bg-opacity-90"
+                  className="bg-primary font-heading hover:bg-primary/90 inline-flex items-center rounded-sm px-8 py-[14px] text-base text-white"
                 >
                   {" "}
                   Get Started Now{" "}

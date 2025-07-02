@@ -4,17 +4,17 @@ export default function Support() {
       <div className="px-4 xl:container">
         <div className="-mx-4 flex flex-wrap justify-center">
           <div className="w-full px-4 xl:w-10/12">
-            <div className="flex flex-wrap items-center border-b pb-14 dark:border-[#2E333D] lg:pb-0">
+            <div className="flex flex-wrap items-center border-b pb-14 lg:pb-0 dark:border-[#2E333D]">
               <div className="w-full px-4 lg:w-1/2">
                 <div className="relative mb-12 max-w-[500px] pt-6 md:mb-14 lg:pt-16">
-                  <span className="title !left-0 !translate-x-0">
+                  <span className="title left-0! translate-x-0!">
                     {" "}
                     SUPPORT{" "}
                   </span>
-                  <h2 className="mb-5 font-heading text-3xl font-semibold text-dark dark:text-white sm:text-4xl md:text-[50px] md:leading-[60px]">
+                  <h2 className="font-heading text-dark mb-5 text-3xl font-semibold sm:text-4xl md:text-[50px] md:leading-[60px] dark:text-white">
                     Need Any Help? Say hello
                   </h2>
-                  <p className="text-base text-dark-text">
+                  <p className="text-dark-text text-base">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit
                     Donec vitae tortor aliquam ante.
                   </p>
@@ -23,10 +23,10 @@ export default function Support() {
 
               <div className="w-full px-4 lg:w-1/2">
                 <div className="flex items-center">
-                  <span className="mr-10 h-1 w-full max-w-[200px] bg-dark dark:bg-white"></span>
+                  <span className="bg-dark mr-10 h-1 w-full max-w-[200px] dark:bg-white"></span>
                   <a
                     href="mailto:info@gostartup.com"
-                    className="font-heading text-xl text-dark dark:text-white md:text-3xl lg:text-xl xl:text-3xl"
+                    className="font-heading text-dark text-xl md:text-3xl lg:text-xl xl:text-3xl dark:text-white"
                   >
                     {" "}
                     info@gostartup.com{" "}
@@ -38,30 +38,30 @@ export default function Support() {
             <div className="-mx-4 flex flex-wrap pt-12">
               <div className="w-full px-4 md:w-1/2 lg:w-1/4">
                 <div className="mb-6">
-                  <h3 className="mb-2 font-heading text-base text-dark dark:text-white sm:text-xl">
+                  <h3 className="font-heading text-dark mb-2 text-base sm:text-xl dark:text-white">
                     Email Address
                   </h3>
-                  <p className="text-base font-medium text-dark-text">
+                  <p className="text-dark-text text-base font-medium">
                     support@startup.com
                   </p>
                 </div>
               </div>
               <div className="w-full px-4 md:w-1/2 lg:w-1/4">
                 <div className="mb-6">
-                  <h3 className="mb-2 font-heading text-base text-dark dark:text-white sm:text-xl">
+                  <h3 className="font-heading text-dark mb-2 text-base sm:text-xl dark:text-white">
                     Phone Number
                   </h3>
-                  <p className="text-base font-medium text-dark-text">
+                  <p className="text-dark-text text-base font-medium">
                     +009 8754 3433 223
                   </p>
                 </div>
               </div>
               <div className="w-full px-4 md:w-1/2 lg:w-1/4">
                 <div className="mb-6">
-                  <h3 className="mb-2 font-heading text-base text-dark dark:text-white sm:text-xl">
+                  <h3 className="font-heading text-dark mb-2 text-base sm:text-xl dark:text-white">
                     Office Location
                   </h3>
-                  <p className="text-base font-medium text-dark-text">
+                  <p className="text-dark-text text-base font-medium">
                     76/A, Green valle, Califonia USA.
                   </p>
                 </div>
@@ -147,7 +147,7 @@ export default function Support() {
                 <div className="mb-12">
                   <label
                     htmlFor="name"
-                    className="mb-3 block font-heading text-base text-dark dark:text-white"
+                    className="font-heading text-dark mb-3 block text-base dark:text-white"
                   >
                     {" "}
                     Your Name{" "}
@@ -157,7 +157,7 @@ export default function Support() {
                     name="name"
                     id="name"
                     placeholder="Full Name"
-                    className="w-full border-b bg-transparent py-5 text-base font-medium text-dark placeholder-dark-text outline-none focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                    className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full border-b bg-transparent py-5 text-base font-medium dark:border-[#2C3443] dark:text-white dark:focus:border-white"
                   />
                 </div>
               </div>
@@ -165,7 +165,7 @@ export default function Support() {
                 <div className="mb-12">
                   <label
                     htmlFor="email"
-                    className="mb-3 block font-heading text-base text-dark dark:text-white"
+                    className="font-heading text-dark mb-3 block text-base dark:text-white"
                   >
                     {" "}
                     Email Address{" "}
@@ -175,7 +175,7 @@ export default function Support() {
                     name="email"
                     id="email"
                     placeholder="Email Address"
-                    className="w-full border-b bg-transparent py-5 text-base font-medium text-dark placeholder-dark-text outline-none focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                    className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full border-b bg-transparent py-5 text-base font-medium dark:border-[#2C3443] dark:text-white dark:focus:border-white"
                   />
                 </div>
               </div>
@@ -183,7 +183,7 @@ export default function Support() {
                 <div className="mb-12">
                   <label
                     htmlFor="phone"
-                    className="mb-3 block font-heading text-base text-dark dark:text-white"
+                    className="font-heading text-dark mb-3 block text-base dark:text-white"
                   >
                     {" "}
                     Phone (Optional){" "}
@@ -193,7 +193,7 @@ export default function Support() {
                     name="phone"
                     id="phone"
                     placeholder="Phone Number"
-                    className="w-full border-b bg-transparent py-5 text-base font-medium text-dark placeholder-dark-text outline-none focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                    className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full border-b bg-transparent py-5 text-base font-medium dark:border-[#2C3443] dark:text-white dark:focus:border-white"
                   />
                 </div>
               </div>
@@ -201,7 +201,7 @@ export default function Support() {
                 <div className="mb-12">
                   <label
                     htmlFor="subject"
-                    className="mb-3 block font-heading text-base text-dark dark:text-white"
+                    className="font-heading text-dark mb-3 block text-base dark:text-white"
                   >
                     {" "}
                     Subject{" "}
@@ -211,7 +211,7 @@ export default function Support() {
                     name="subject"
                     id="subject"
                     placeholder="Type Subject"
-                    className="w-full border-b bg-transparent py-5 text-base font-medium text-dark placeholder-dark-text outline-none focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                    className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full border-b bg-transparent py-5 text-base font-medium dark:border-[#2C3443] dark:text-white dark:focus:border-white"
                   />
                 </div>
               </div>
@@ -219,7 +219,7 @@ export default function Support() {
                 <div className="mb-10">
                   <label
                     htmlFor="message"
-                    className="mb-3 block font-heading text-base text-dark dark:text-white"
+                    className="font-heading text-dark mb-3 block text-base dark:text-white"
                   >
                     {" "}
                     Message{" "}
@@ -229,48 +229,48 @@ export default function Support() {
                     name="message"
                     id="message"
                     placeholder="Type Message"
-                    className="w-full resize-none border-b bg-transparent py-5 text-base font-medium text-dark placeholder-dark-text outline-none focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                    className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full resize-none border-b bg-transparent py-5 text-base font-medium dark:border-[#2C3443] dark:text-white dark:focus:border-white"
                   ></textarea>
                 </div>
               </div>
 
-              <div className="w-full px-4">
-                <div className="mb-12">
-                  <label
-                    htmlFor="supportCheckbox"
-                    className="flex cursor-pointer select-none text-dark-text hover:text-primary"
-                  >
-                    <div className="relative">
-                      <input
-                        type="checkbox"
-                        id="supportCheckbox"
-                        className="sr-only"
-                      />
-                      <div className="box mr-4 mt-1 flex h-5 w-5 items-center justify-center rounded border dark:border-[#414652]">
-                        <span className="opacity-0">
-                          <svg
-                            width="11"
-                            height="8"
-                            viewBox="0 0 11 8"
-                            fill="none"
-                            className="stroke-current"
-                          >
-                            <path
-                              d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
-                              strokeWidth="0.4"
-                            ></path>
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
+              <div className="mb-12 px-4">
+                <label
+                  htmlFor="supportCheckbox"
+                  className="text-dark-text hover:text-primary flex gap-4"
+                >
+                  <input
+                    type="checkbox"
+                    id="supportCheckbox"
+                    className="peer sr-only"
+                  />
+
+                  <span className="group flex h-[1lh] shrink-0 items-center">
+                    <span className="flex size-5 items-center justify-center rounded-sm border dark:border-[#414652]">
+                      <svg
+                        width="11"
+                        height="8"
+                        viewBox="0 0 11 8"
+                        fill="currentColor"
+                        className="group-peer-checked:opacity-100 text-primary opacity-0"
+                      >
+                        <path
+                          d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                          strokeWidth="0.4"
+                        ></path>
+                      </svg>
+                    </span>
+                  </span>
+
+                  <span>
                     I have read the terms of the Service & I accept Privacy
                     Policy
-                  </label>
-                </div>
+                  </span>
+                </label>
               </div>
 
               <div className="w-full px-4">
-                <button className="flex w-full items-center justify-center rounded bg-primary px-8 py-[14px] font-heading text-base text-white hover:bg-opacity-90">
+                <button className="bg-primary font-heading hover:bg-primary/90 flex w-full items-center justify-center rounded-sm px-8 py-[14px] text-base text-white">
                   Send Message
                 </button>
               </div>

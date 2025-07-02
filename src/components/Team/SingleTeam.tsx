@@ -4,9 +4,14 @@ import Image from "next/image";
 export default function SingleTeam({ team }: { team: Team }) {
   return (
     <div className="w-full px-4 md:w-1/2 lg:w-1/4">
-      <div className="group mx-auto mb-10 max-w-[300px] text-center xs:max-w-[370px]">
-        <div className="relative mb-8 aspect-[360/370] overflow-hidden rounded">
-          <Image src={team?.image} alt={team?.name} fill className="w-full" />
+      <div className="xs:max-w-[370px] group mx-auto mb-10 max-w-[300px] text-center">
+        <div className="aspect-360/370 relative mb-8 overflow-hidden rounded-sm">
+          <Image
+            src={team?.image}
+            alt={team?.name}
+            fill
+            className="w-full object-cover"
+          />
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 translate-y-10 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
             <div className="flex items-center justify-center space-x-3">
               {team?.socialLinks.map((social) => (
@@ -16,10 +21,10 @@ export default function SingleTeam({ team }: { team: Team }) {
           </div>
         </div>
         <div>
-          <h3 className="mb-1 font-heading text-xl font-medium text-dark dark:text-white sm:text-2xl">
+          <h3 className="font-heading text-dark mb-1 text-xl font-medium sm:text-2xl dark:text-white">
             {team?.name}
           </h3>
-          <p className="font-heading text-base text-dark-text">
+          <p className="font-heading text-dark-text text-base">
             {team?.designation}
           </p>
         </div>
@@ -33,7 +38,7 @@ function SocialButton({ social }: { social: SocialLink }) {
     <a
       href={social?.link}
       aria-label={social?.name}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-white border-opacity-10 bg-white bg-opacity-10 text-white backdrop-blur transition hover:border-transparent hover:bg-primary hover:bg-opacity-100"
+      className="hover:bg-primary flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white backdrop-blur-sm transition hover:border-transparent"
     >
       {social?.name === "Facebook" && (
         <svg

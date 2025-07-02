@@ -4,6 +4,26 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import z from "zod";
+import { integrations, messages } from "../../../../integrations.config";
+
+const loginSchema = z.object({
+  email: z.string().email(),
+  password: z
+    .string()
+    .min(8)
+    .refine(
+      (val) =>
+        /[A-Z]/.test(val) && // At least one uppercase letter
+        /[a-z]/.test(val) && // At least one lowercase letter
+        /\d/.test(val) && // At least one number
+        /[@$!%*?&]/.test(val), // At least one special character
+      {
+        message:
+          "Password must be at least 8 characters long and contain uppercase and lowercase letters, a number, and a special character.",
+      },
+    ),
+});
 
 export default function Signin() {
   const [data, setData] = useState({
@@ -14,6 +34,17 @@ export default function Signin() {
 
   const loginUser = async (e: any) => {
     e.preventDefault();
+
+    if (!integrations?.isAuthEnabled) {
+      toast.error(messages?.auth);
+      return;
+    }
+
+    const result = await loginSchema.safeParseAsync(data);
+    if (!result.success) {
+      toast.error(result.error.issues[0]?.message);
+      return;
+    }
 
     signIn("credentials", { ...data, redirect: false }).then((callback) => {
       if (callback?.error) {
@@ -30,24 +61,24 @@ export default function Signin() {
   return (
     <section className="pt-[120px] lg:pt-[240px]">
       <div className="px-4 xl:container">
-        <div className="border-b pb-20 dark:border-[#2E333D] lg:pb-[130px]">
+        <div className="border-b pb-20 lg:pb-[130px] dark:border-[#2E333D]">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
-              <div className="mx-auto max-w-[920px] rounded border bg-white px-6 py-10 dark:border-transparent dark:bg-[#1D232D] sm:p-[70px]">
-                <h1 className="mb-3 font-heading text-2xl font-medium text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-[40px] xl:leading-tight">
+              <div className="mx-auto max-w-[920px] rounded-sm border bg-white px-6 py-10 sm:p-[70px] dark:border-transparent dark:bg-[#1D232D]">
+                <h1 className="font-heading mb-3 text-2xl font-medium text-black sm:text-3xl lg:text-2xl xl:text-[40px] xl:leading-tight dark:text-white">
                   Sign in to your Account
                 </h1>
-                <p className="mb-12 text-base font-medium text-dark-text">
+                <p className="text-dark-text mb-12 text-base font-medium">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
 
-                <h3 className="mb-8 font-heading text-xl text-dark dark:text-white">
+                <h3 className="font-heading text-dark mb-8 text-xl dark:text-white">
                   Sign in with Social Media
                 </h3>
                 <div className="mb-12 flex items-center space-x-4">
                   <button
                     onClick={() => signIn("google")}
-                    className="flex h-[50px] w-[50px] items-center justify-center rounded border text-base text-dark-text dark:border-transparent dark:bg-[#2C3443] sm:w-auto sm:px-7"
+                    className="text-dark-text flex h-[50px] w-[50px] items-center justify-center rounded-sm border text-base sm:w-auto sm:px-7 dark:border-transparent dark:bg-[#2C3443]"
                   >
                     <span className="sm:pr-3">
                       <svg
@@ -86,39 +117,7 @@ export default function Signin() {
                       Sign in with Google
                     </span>
                   </button>
-                  {/* <button
-                    className="flex h-[50px] w-[50px] items-center justify-center rounded border dark:border-transparent dark:bg-[#2C3443] dark:text-white"
-                  >
-                    <svg
-                      width="22"
-                      height="22"
-                      viewBox="0 0 22 22"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        clipRule="evenodd"
-                        d="M13.9831 19.25L9.82094 13.3176L4.61058 19.25H2.40625L8.843 11.9233L2.40625 2.75H8.06572L11.9884 8.34127L16.9034 2.75H19.1077L12.9697 9.73737L19.6425 19.25H13.9831ZM16.4378 17.5775H14.9538L5.56249 4.42252H7.04674L10.808 9.6899L11.4584 10.6039L16.4378 17.5775Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    className="flex h-[50px] w-[50px] items-center justify-center rounded border dark:border-transparent dark:bg-[#2C3443]"
-                  >
-                    <svg
-                      width="12"
-                      height="22"
-                      viewBox="0 0 12 22"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7.7 12.65H10.45L11.55 8.25H7.7V6.05C7.7 4.917 7.7 3.85 9.9 3.85H11.55V0.154C11.1914 0.1067 9.8373 0 8.4073 0C5.4208 0 3.3 1.8227 3.3 5.17V8.25H0V12.65H3.3V22H7.7V12.65Z"
-                        fill="#1877F2"
-                      />
-                    </svg>
-                  </button> */}
+
                   <button
                     onClick={() => signIn("github")}
                     className="flex h-[50px] w-[50px] items-center justify-center rounded-md border dark:border-transparent dark:bg-[#2C3443]"
@@ -139,8 +138,8 @@ export default function Signin() {
                 </div>
 
                 <div className="relative z-10 mb-8 flex items-center justify-center">
-                  <span className="absolute left-0 top-1/2 -z-10 hidden h-[1px] w-full -translate-y-1/2 bg-slate-300 dark:bg-[#2E333D] sm:block"></span>
-                  <p className="bg-white text-base font-medium text-dark-text dark:bg-[#1D232D] sm:px-4">
+                  <span className="absolute left-0 top-1/2 -z-10 hidden h-[1px] w-full -translate-y-1/2 bg-slate-300 sm:block dark:bg-[#2E333D]"></span>
+                  <p className="text-dark-text bg-white text-base font-medium sm:px-4 dark:bg-[#1D232D]">
                     Or Sign in with your email
                   </p>
                 </div>
@@ -151,7 +150,7 @@ export default function Signin() {
                       <div className="mb-10">
                         <label
                           htmlFor="email"
-                          className="mb-3 block font-heading text-base text-dark dark:text-white"
+                          className="font-heading text-dark mb-3 block text-base dark:text-white"
                         >
                           Email Address
                         </label>
@@ -163,7 +162,7 @@ export default function Signin() {
                             setData({ ...data, email: e.target.value })
                           }
                           placeholder="jhonandrio@domain.com"
-                          className="w-full border-b bg-transparent py-5 text-base font-medium text-dark placeholder-dark-text outline-none focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                          className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full border-b bg-transparent py-5 text-base font-medium dark:border-[#2C3443] dark:text-white dark:focus:border-white"
                         />
                       </div>
                     </div>
@@ -171,7 +170,7 @@ export default function Signin() {
                       <div className="mb-10">
                         <label
                           htmlFor="password"
-                          className="mb-3 block font-heading text-base text-dark dark:text-white"
+                          className="font-heading text-dark mb-3 block text-base dark:text-white"
                         >
                           Password
                         </label>
@@ -183,58 +182,55 @@ export default function Signin() {
                             setData({ ...data, password: e.target.value })
                           }
                           placeholder="**********"
-                          className="w-full border-b bg-transparent py-5 text-base font-medium text-dark placeholder-dark-text outline-none focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                          className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full border-b bg-transparent py-5 text-base font-medium dark:border-[#2C3443] dark:text-white dark:focus:border-white"
                         />
                       </div>
                     </div>
 
-                    <div className="w-full px-4">
-                      <div className="flex flex-wrap">
-                        <div className="mb-8 mr-10">
-                          <label
-                            htmlFor="supportCheckbox"
-                            className="flex cursor-pointer select-none text-dark-text hover:text-primary"
-                          >
-                            <div className="relative">
-                              <input
-                                type="checkbox"
-                                id="supportCheckbox"
-                                className="sr-only"
-                              />
-                              <div className="box mr-4 mt-1 flex h-5 w-5 items-center justify-center rounded border dark:border-[#414652]">
-                                <span className="opacity-0">
-                                  <svg
-                                    width="11"
-                                    height="8"
-                                    viewBox="0 0 11 8"
-                                    fill="none"
-                                    className="stroke-current"
-                                  >
-                                    <path
-                                      d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
-                                      strokeWidth="0.4"
-                                    ></path>
-                                  </svg>
-                                </span>
-                              </div>
-                            </div>
-                            Keep me signed in
-                          </label>
-                        </div>
-                        <div className="mb-8">
-                          <Link
-                            href="/auth/forget-password"
-                            className="text-base text-dark-text hover:text-primary"
-                          >
-                            Forgot Password?
-                          </Link>
-                        </div>
+                    <div className="mb-8 px-4">
+                      <div className="flex flex-wrap gap-10">
+                        <label
+                          htmlFor="checkbox"
+                          className="text-dark-text hover:text-primary flex gap-4"
+                        >
+                          <input
+                            type="checkbox"
+                            id="checkbox"
+                            className="peer sr-only"
+                          />
+
+                          <span className="group flex h-[1lh] shrink-0 items-center">
+                            <span className="flex size-5 items-center justify-center rounded-sm border dark:border-[#414652]">
+                              <svg
+                                width="11"
+                                height="8"
+                                viewBox="0 0 11 8"
+                                fill="currentColor"
+                                className="group-peer-checked:opacity-100 text-primary opacity-0"
+                              >
+                                <path
+                                  d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                  strokeWidth="0.4"
+                                ></path>
+                              </svg>
+                            </span>
+                          </span>
+
+                          <span>Keep me Signed in</span>
+                        </label>
+
+                        <Link
+                          href="/auth/forget-password"
+                          className="text-dark-text hover:text-primary text-base"
+                        >
+                          Forgot Password?
+                        </Link>
                       </div>
                     </div>
                     <div className="w-full px-4">
                       <button
                         type="submit"
-                        className="flex items-center justify-center rounded bg-primary px-14 py-[14px] text-sm font-semibold text-white"
+                        className="bg-primary flex items-center justify-center rounded-sm px-14 py-[14px] text-sm font-semibold text-white"
                       >
                         Sign In Now
                       </button>

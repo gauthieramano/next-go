@@ -1,7 +1,7 @@
 export default function BlogComment() {
   return (
     <div className="mx-auto max-w-[920px]">
-      <h3 className="mb-14 font-heading text-3xl font-medium text-dark dark:text-white md:text-[40px]">
+      <h3 className="font-heading text-dark mb-14 text-3xl font-medium md:text-[40px] dark:text-white">
         Leave a comment
       </h3>
       <form>
@@ -13,7 +13,7 @@ export default function BlogComment() {
                 name="name"
                 id="name"
                 placeholder=" Name"
-                className="w-full border-b bg-transparent py-5 text-base text-dark placeholder-dark-text outline-none focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full border-b bg-transparent py-5 text-base dark:border-[#2C3443] dark:text-white dark:focus:border-white"
               />
             </div>
           </div>
@@ -24,7 +24,7 @@ export default function BlogComment() {
                 name="email"
                 id="email"
                 placeholder="Email "
-                className="w-full border-b bg-transparent py-5 text-base text-dark placeholder-dark-text outline-none focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full border-b bg-transparent py-5 text-base dark:border-[#2C3443] dark:text-white dark:focus:border-white"
               />
             </div>
           </div>
@@ -35,7 +35,7 @@ export default function BlogComment() {
                 name="website"
                 id="website"
                 placeholder="Website "
-                className="w-full border-b bg-transparent py-5 text-base text-dark placeholder-dark-text outline-none focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full border-b bg-transparent py-5 text-base dark:border-[#2C3443] dark:text-white dark:focus:border-white"
               />
             </div>
           </div>
@@ -47,7 +47,7 @@ export default function BlogComment() {
                 name="message"
                 id="message"
                 placeholder="Type Message"
-                className="w-full resize-none border-b bg-transparent py-5 text-base font-medium text-dark placeholder-dark-text outline-none focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full resize-none border-b bg-transparent py-5 text-base font-medium dark:border-[#2C3443] dark:text-white dark:focus:border-white"
               ></textarea>
             </div>
           </div>
@@ -56,7 +56,7 @@ export default function BlogComment() {
             <div className="mb-12">
               <label
                 htmlFor="supportCheckbox"
-                className="flex cursor-pointer select-none text-dark-text hover:text-primary"
+                className="text-dark-text hover:text-primary flex cursor-pointer select-none"
               >
                 <div className="relative">
                   <input
@@ -64,7 +64,7 @@ export default function BlogComment() {
                     id="supportCheckbox"
                     className="sr-only"
                   />
-                  <div className="box mr-4 mt-1 flex h-5 w-5 items-center justify-center rounded border dark:border-[#414652]">
+                  <div className="box mr-4 mt-1 flex h-5 w-5 items-center justify-center rounded-sm border dark:border-[#414652]">
                     <span className="opacity-0">
                       <svg
                         width="11"
@@ -87,7 +87,7 @@ export default function BlogComment() {
           </div>
 
           <div className="w-full px-4">
-            <button className="flex items-center justify-center rounded bg-primary px-8 py-[14px] font-heading text-base text-white hover:bg-opacity-90">
+            <button className="bg-primary font-heading hover:bg-primary/90 flex items-center justify-center rounded-sm px-8 py-[14px] text-base text-white">
               Submit Comment
             </button>
           </div>
