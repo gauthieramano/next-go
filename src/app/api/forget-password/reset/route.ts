@@ -1,9 +1,8 @@
 import { sendEmail } from "@/app/libs/email";
 import { prisma } from "@/app/libs/prismaDB";
+import { ENV } from "@/utils/env";
 import crypto from "crypto";
 import { NextResponse } from "next/server";
-
-const { SITE_URL } = process.env;
 
 export async function POST(request: any) {
   const { email } = await request.json();
@@ -38,7 +37,7 @@ export async function POST(request: any) {
     },
   });
 
-  const url = `${SITE_URL}/auth/reset-password/${token}`;
+  const url = `${ENV.SITE_URL}/auth/reset-password/${token}`;
   const html = /* html */ `
     <div>
       <h1>You requested a password reset</h1>
