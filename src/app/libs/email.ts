@@ -1,3 +1,4 @@
+import { ENV } from "@/utils/env";
 import { Resend } from "resend";
 
 type Args = {
@@ -6,12 +7,11 @@ type Args = {
   html: string;
 };
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const EMAIL_FROM = process.env.EMAIL_FROM!;
+const resend = new Resend(ENV.RESEND_API_KEY);
 
 export const sendEmail = async (emailPayload: Args) => {
   const { error } = await resend.emails.send({
-    from: EMAIL_FROM,
+    from: ENV.EMAIL_FROM,
     ...emailPayload,
   });
 
