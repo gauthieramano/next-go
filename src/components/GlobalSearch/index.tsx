@@ -1,7 +1,10 @@
+"use client";
+
 import algoliasearch from "algoliasearch";
 import Image from "next/image";
 import { useEffect } from "react";
-import { Hits, InstantSearch, SearchBox } from "react-instantsearch";
+import { Hits, SearchBox } from "react-instantsearch";
+import { InstantSearchNext } from "react-instantsearch-nextjs";
 import { integrations, messages } from "../../../integrations.config";
 import CustomHits from "./CustomHits";
 
@@ -43,10 +46,11 @@ const GlobalSearchModal = (props: Props) => {
   return (
     <div className="fixed top-0 left-0 z-99999! flex h-full min-h-screen w-full justify-center bg-[rgba(0,0,0,0.25)] px-4 py-[12vh] backdrop-blur-xs">
       <div className="modal-content relative w-full max-w-[600px] overflow-hidden rounded-xl bg-white dark:bg-dark">
-        <InstantSearch
+        <InstantSearchNext
           // insights={false}
           searchClient={algoliaClient}
           indexName={INDEX}
+          future={{ preserveSharedStateOnUnmount: true }}
         >
           <SearchBox
             placeholder="Search Entire Site | Products, Docs, Pages ..."
@@ -95,7 +99,7 @@ const GlobalSearchModal = (props: Props) => {
               messages?.algolia
             )}
           </div>
-        </InstantSearch>
+        </InstantSearchNext>
       </div>
     </div>
   );
