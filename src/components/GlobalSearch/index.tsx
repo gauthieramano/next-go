@@ -1,4 +1,5 @@
 import algoliasearch from "algoliasearch";
+import Image from "next/image";
 import { useEffect } from "react";
 import { Hits, InstantSearch, SearchBox } from "react-instantsearch";
 import { integrations, messages } from "../../../integrations.config";
@@ -61,6 +62,24 @@ const GlobalSearchModal = (props: Props) => {
               loadingIcon: "hidden",
             }}
           />
+
+          <div className="flex justify-end gap-2 px-3 py-2">
+            <span className="text-xs">Search powered by</span>
+            <Image
+              src="/images/algolia-logo-white.svg"
+              alt="Algolia"
+              className="hidden h-auto object-contain dark:block"
+              width={80}
+              height={18}
+            />
+            <Image
+              src="/images/algolia-logo-blue.svg"
+              alt="Algolia"
+              className="block h-auto object-contain dark:hidden"
+              width={80}
+              height={18}
+            />
+          </div>
 
           <div className="max-h-full overflow-y-auto">
             {integrations?.isAlgoliaEnabled ? (
