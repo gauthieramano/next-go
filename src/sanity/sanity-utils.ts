@@ -1,5 +1,5 @@
 import { Blog } from "@/types/blog";
-import ImageUrlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
 import { createClient, type QueryParams } from "next-sanity";
 import { integrations } from "../../integrations.config";
 import clientConfig from "./config/client-config";
@@ -32,7 +32,7 @@ export async function sanityFetch<QueryResponse>({
 }
 
 export function imageBuilder(source: string) {
-  return ImageUrlBuilder(clientConfig as any).image(source);
+  return createImageUrlBuilder(clientConfig as any).image(source);
 }
 
 export async function getPosts() {
