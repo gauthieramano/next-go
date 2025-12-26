@@ -7,18 +7,18 @@ const tabButtons = [
   {
     id: crypto.randomUUID(),
     title: "About Us",
-    value: "about"
+    value: "about",
   },
   {
     id: crypto.randomUUID(),
     title: "Our Mission",
-    value: "mission"
+    value: "mission",
   },
   {
     id: crypto.randomUUID(),
     title: "Our Vision",
-    value: "vision"
-  }
+    value: "vision",
+  },
 ];
 
 export default function AboutContent() {
@@ -26,7 +26,7 @@ export default function AboutContent() {
 
   return (
     <>
-      <div className='tabButtons flex w-full items-center justify-around'>
+      <div className="tabButtons flex w-full items-center justify-around">
         {tabButtons.map((tabButton) => (
           <button
             key={tabButton?.id}
@@ -37,25 +37,25 @@ export default function AboutContent() {
           </button>
         ))}
       </div>
-      <div className='w-full'>
+      <div className="w-full">
         {activeTab === "about" && (
           <TabPanel
-            title='DB, Auth, Stripe, Sanity, and More'
-            image1='/images/about/image-1.jpg'
-            image1Alt='about image 1'
-            image2='/images/about/image-2.jpg'
-            image2Alt='about image 2'
+            title="DB, Auth, Stripe, Sanity, and More"
+            image1="/images/about/image-1.jpg"
+            image1Alt="about image 1"
+            image2="/images/about/image-2.jpg"
+            image2Alt="about image 2"
           >
-            <p className='mb-6 text-base text-dark-text'>
+            <p className="mb-6 text-base text-dark-text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
               condimentum sapien ac leo cursus dignissim. In ac lectus vel orci
               accumsan ultricies at in libero accumsan.
             </p>
-            <p className='mb-6 text-base text-dark-text'>
+            <p className="mb-6 text-base text-dark-text">
               Phasellus ex massa, facilisis ac vestibulum eget, ultrices quis
               nulla. Integer vitae magna lacus. Sed venenatis auctor dolor.
             </p>
-            <p className='text-base text-dark-text'>
+            <p className="text-base text-dark-text">
               Phasellus ex massa, facilisis ac vestibulum eget, ultrices quis
               nulla. Integer vitae magna lacus. Sed venenatis auctor dolor.
             </p>
@@ -64,23 +64,23 @@ export default function AboutContent() {
 
         {activeTab === "mission" && (
           <TabPanel
-            title='Built-with Latest Tools and Technologies'
-            image1='/images/about/image-1.jpg'
-            image1Alt='about image 1'
-            image2='/images/about/image-2.jpg'
-            image2Alt='about image 2'
+            title="Built-with Latest Tools and Technologies"
+            image1="/images/about/image-1.jpg"
+            image1Alt="about image 1"
+            image2="/images/about/image-2.jpg"
+            image2Alt="about image 2"
             leftContent
           >
-            <p className='mb-6 text-base text-dark-text'>
+            <p className="mb-6 text-base text-dark-text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
               condimentum sapien ac leo cursus dignissim. In ac lectus vel orci
               accumsan ultricies at in libero accumsan.
             </p>
-            <p className='mb-6 text-base text-dark-text'>
+            <p className="mb-6 text-base text-dark-text">
               Phasellus ex massa, facilisis ac vestibulum eget, ultrices quis
               nulla. Integer vitae magna lacus. Sed venenatis auctor dolor.
             </p>
-            <p className='text-base text-dark-text'>
+            <p className="text-base text-dark-text">
               Phasellus ex massa, facilisis ac vestibulum eget, ultrices quis
               nulla. Integer vitae magna lacus. Sed venenatis auctor dolor.
             </p>
@@ -89,22 +89,22 @@ export default function AboutContent() {
 
         {activeTab === "vision" && (
           <TabPanel
-            title='High-quality Premium Design with Everything You Need'
-            image1='/images/about/image-1.jpg'
-            image1Alt='about image 1'
-            image2='/images/about/image-2.jpg'
-            image2Alt='about image 2'
+            title="High-quality Premium Design with Everything You Need"
+            image1="/images/about/image-1.jpg"
+            image1Alt="about image 1"
+            image2="/images/about/image-2.jpg"
+            image2Alt="about image 2"
           >
-            <p className='mb-6 text-base text-dark-text'>
+            <p className="mb-6 text-base text-dark-text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
               condimentum sapien ac leo cursus dignissim. In ac lectus vel orci
               accumsan ultricies at in libero accumsan.
             </p>
-            <p className='mb-6 text-base text-dark-text'>
+            <p className="mb-6 text-base text-dark-text">
               Phasellus ex massa, facilisis ac vestibulum eget, ultrices quis
               nulla. Integer vitae magna lacus. Sed venenatis auctor dolor.
             </p>
-            <p className='text-base text-dark-text'>
+            <p className="text-base text-dark-text">
               Phasellus ex massa, facilisis ac vestibulum eget, ultrices quis
               nulla. Integer vitae magna lacus. Sed venenatis auctor dolor.
             </p>

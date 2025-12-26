@@ -7,7 +7,7 @@ export const testimonialData: Testimonial[] = [
     designation: "Founder @ Pimjo",
     image: "/images/testimonial/image-1.jpg",
     review:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum sapien ac leo cursus dignissim. In ac lectus vel orci accumsan ultricies at in libero accumsan Lorem Ipsum has been the industry's standard"
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum sapien ac leo cursus dignissim. In ac lectus vel orci accumsan ultricies at in libero accumsan Lorem Ipsum has been the industry's standard",
   },
   {
     id: crypto.randomUUID(),
@@ -15,7 +15,7 @@ export const testimonialData: Testimonial[] = [
     designation: "Product Designer @ Pimjo",
     image: "/images/testimonial/image-1.jpg",
     review:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum sapien ac leo cursus dignissim. In ac lectus vel orci accumsan ultricies at in libero accumsan Lorem Ipsum has been the industry's standard"
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum sapien ac leo cursus dignissim. In ac lectus vel orci accumsan ultricies at in libero accumsan Lorem Ipsum has been the industry's standard",
   },
   {
     id: crypto.randomUUID(),
@@ -23,6 +23,6 @@ export const testimonialData: Testimonial[] = [
     designation: "Frontend Developer @ Pimjo",
     image: "/images/testimonial/image-1.jpg",
     review:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum sapien ac leo cursus dignissim. In ac lectus vel orci accumsan ultricies at in libero accumsan Lorem Ipsum has been the industry's standard"
-  }
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum sapien ac leo cursus dignissim. In ac lectus vel orci accumsan ultricies at in libero accumsan Lorem Ipsum has been the industry's standard",
+  },
 ];

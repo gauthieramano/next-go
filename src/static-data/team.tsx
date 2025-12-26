@@ -10,19 +10,19 @@ export const teamData: Team[] = [
       {
         id: crypto.randomUUID(),
         name: "Facebook",
-        link: "/"
+        link: "/",
       },
       {
         id: crypto.randomUUID(),
         name: "Twitter",
-        link: "/"
+        link: "/",
       },
       {
         id: crypto.randomUUID(),
         name: "Linkedin",
-        link: "/"
-      }
-    ]
+        link: "/",
+      },
+    ],
   },
   {
     id: crypto.randomUUID(),
@@ -33,19 +33,19 @@ export const teamData: Team[] = [
       {
         id: crypto.randomUUID(),
         name: "Facebook",
-        link: "/"
+        link: "/",
       },
       {
         id: crypto.randomUUID(),
         name: "Twitter",
-        link: "/"
+        link: "/",
       },
       {
         id: crypto.randomUUID(),
         name: "Linkedin",
-        link: "/"
-      }
-    ]
+        link: "/",
+      },
+    ],
   },
   {
     id: crypto.randomUUID(),
@@ -56,18 +56,18 @@ export const teamData: Team[] = [
       {
         id: crypto.randomUUID(),
         name: "Facebook",
-        link: "/"
+        link: "/",
       },
       {
         id: crypto.randomUUID(),
         name: "Twitter",
-        link: "/"
+        link: "/",
       },
       {
         id: crypto.randomUUID(),
         name: "Linkedin",
-        link: "/"
-      }
-    ]
-  }
+        link: "/",
+      },
+    ],
+  },
 ];
