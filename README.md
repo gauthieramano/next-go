@@ -38,7 +38,7 @@ When all integrations are done, then you can start the project on the developeme
 npm run dev
 ```
 
-It’ll start the template on http://localhost:3000
+It’ll start the template on <http://localhost:3000>
 
 ### Deploying on PaaS
 
@@ -53,6 +53,11 @@ Follow the steps below to complete the installation, if you get stuck feel free 
 will get back to you ASAP.
 
 ### Update Logs
+
+**December 2025 v2.1.1**
+
+- Upgraded to Next.js 16
+- Updated prisma to v7
 
 **March 2025 v2.1**
 
