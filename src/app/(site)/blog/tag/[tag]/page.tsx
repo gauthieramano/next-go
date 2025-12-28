@@ -26,12 +26,11 @@ export async function generateMetadata(props: Props) {
         nocache: true,
       },
     };
-  } else {
-    return {
-      title: "Not Found",
-      description: "No tag has been found",
-    };
   }
+  return {
+    title: "Not Found",
+    description: "No tag has been found",
+  };
 }
 
 export default async function TagSlugPage(props: Props) {

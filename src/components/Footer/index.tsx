@@ -15,7 +15,7 @@ export default function Footer() {
 
           <div className="w-1/2 px-4 md:w-3/12 lg:w-3/12 xl:w-2/12">
             <div className="mb-20">
-              <h3 className="mb-9 font-heading text-2xl font-medium text-dark dark:text-white">
+              <h3 className="mb-9 font-heading font-medium text-2xl text-dark dark:text-white">
                 Company
               </h3>
 
@@ -29,7 +29,7 @@ export default function Footer() {
 
           <div className="w-1/2 px-4 md:w-3/12 lg:w-3/12 xl:w-2/12">
             <div className="mb-20">
-              <h3 className="mb-9 font-heading text-2xl font-medium text-dark dark:text-white">
+              <h3 className="mb-9 font-heading font-medium text-2xl text-dark dark:text-white">
                 Support
               </h3>
 
@@ -43,7 +43,7 @@ export default function Footer() {
 
           <div className="w-full px-4 sm:w-1/2 md:w-5/12 lg:w-3/12 xl:w-2/12">
             <div className="mb-20">
-              <h3 className="mb-9 font-heading text-2xl font-medium text-dark dark:text-white">
+              <h3 className="mb-9 font-heading font-medium text-2xl text-dark dark:text-white">
                 Get in touch
               </h3>
 

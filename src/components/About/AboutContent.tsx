@@ -31,7 +31,7 @@ export default function AboutContent() {
           <button
             key={tabButton?.id}
             onClick={() => setActiveTab(tabButton?.value)}
-            className={`w-full border-b px-2 pb-6 pt-8 font-heading text-base font-medium lg:pb-7 lg:pt-9 ${activeTab === tabButton?.value ? "border-primary text-primary dark:border-primary" : "hover:border-primary hover:text-primary dark:border-[#4B4E56] dark:text-white dark:hover:border-primary"}`}
+            className={`w-full border-b px-2 pt-8 pb-6 font-heading font-medium text-base lg:pt-9 lg:pb-7 ${activeTab === tabButton?.value ? "border-primary text-primary dark:border-primary" : "hover:border-primary hover:text-primary dark:border-[#4B4E56] dark:text-white dark:hover:border-primary"}`}
           >
             {tabButton?.title}
           </button>

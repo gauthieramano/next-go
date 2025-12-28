@@ -1,5 +1,5 @@
-import { FooterLink } from "@/types/footer";
 import Link from "next/link";
+import type { FooterLink } from "@/types/footer";
 
 export default function FooterLinkItem({ linkItem }: { linkItem: FooterLink }) {
   return (
@@ -12,7 +12,7 @@ export default function FooterLinkItem({ linkItem }: { linkItem: FooterLink }) {
         {linkItem?.title}
 
         {linkItem?.badge && (
-          <span className="ml-4 rounded-sm bg-primary px-2 py-1 font-heading text-xs text-white">
+          <span className="ml-4 rounded-sm bg-primary px-2 py-1 font-heading text-white text-xs">
             {linkItem?.badge?.text}
           </span>
         )}

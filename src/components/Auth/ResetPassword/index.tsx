@@ -19,7 +19,7 @@ const ResetPassword = ({ token }: { token: string }) => {
   useEffect(() => {
     const verifyToken = async () => {
       try {
-        const res = await axios.post(`/api/forget-password/verify-token`, {
+        const res = await axios.post("/api/forget-password/verify-token", {
           token,
         });
 
@@ -47,7 +47,7 @@ const ResetPassword = ({ token }: { token: string }) => {
     }
 
     try {
-      const res = await axios.post(`/api/forget-password/update`, {
+      const res = await axios.post("/api/forget-password/update", {
         email: user?.email,
         password: data.password,
       });
@@ -67,9 +67,9 @@ const ResetPassword = ({ token }: { token: string }) => {
     <section className="pt-[120px] lg:pt-[240px]">
       <div className="px-4 xl:container">
         <div className="border-b pb-24 dark:border-[#2E333D]">
-          <div className="mx-auto max-w-[750px] rounded-sm border bg-white px-6 py-10 dark:border-transparent dark:bg-[#1D232D] sm:p-[70px]">
+          <div className="mx-auto max-w-[750px] rounded-sm border bg-white px-6 py-10 sm:p-[70px] dark:border-transparent dark:bg-[#1D232D]">
             <div className="mb-8 text-center">
-              <h1 className="mb-3 font-heading text-2xl font-medium text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-[40px] xl:leading-tight">
+              <h1 className="mb-3 font-heading font-medium text-2xl text-black sm:text-3xl lg:text-2xl xl:text-[40px] xl:leading-tight dark:text-white">
                 Update Password
               </h1>
 
@@ -89,15 +89,15 @@ const ResetPassword = ({ token }: { token: string }) => {
                     setData({ ...data, password: e.target.value })
                   }
                   required
-                  className="w-full border-b bg-transparent py-5 text-base font-medium text-dark placeholder-dark-text outline-hidden focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                  className="w-full border-b bg-transparent py-5 font-medium text-base text-dark placeholder-dark-text outline-hidden focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
                 />
 
                 <button
                   aria-label="login with email and password"
-                  className={`inline-flex items-center justify-center rounded bg-primary px-14 py-[14px] text-sm font-semibold text-white ${
+                  className={`inline-flex items-center justify-center rounded bg-primary px-14 py-[14px] font-semibold text-sm text-white ${
                     error.length > 0 || !data.password
                       ? "bg-gray-600"
-                      : "bg-black  "
+                      : "bg-black"
                   }`}
                   type="submit"
                 >

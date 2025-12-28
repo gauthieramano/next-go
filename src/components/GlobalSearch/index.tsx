@@ -35,11 +35,13 @@ const GlobalSearchModal = (props: Props) => {
     };
   }, [searchModalOpen, setSearchModalOpen]);
 
-  if (!searchModalOpen) return null;
+  if (!searchModalOpen) {
+    return null;
+  }
 
   return (
-    <div className="z-99999! backdrop-blur-xs fixed left-0 top-0 flex h-full min-h-screen w-full justify-center bg-[rgba(0,0,0,0.25)] px-4 py-[12vh]">
-      <div className="modal-content dark:bg-dark relative w-full max-w-[600px] overflow-hidden rounded-xl bg-white">
+    <div className="fixed top-0 left-0 z-99999! flex h-full min-h-screen w-full justify-center bg-[rgba(0,0,0,0.25)] px-4 py-[12vh] backdrop-blur-xs">
+      <div className="modal-content relative w-full max-w-[600px] overflow-hidden rounded-xl bg-white dark:bg-dark">
         <InstantSearch
           // insights={false}
           searchClient={algoliaClient}

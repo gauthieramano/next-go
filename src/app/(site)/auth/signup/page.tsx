@@ -1,5 +1,5 @@
+import type { Metadata } from "next";
 import Signup from "@/components/Auth/Signup";
-import { Metadata } from "next";
 
 const siteName = process.env.SITE_NAME;
 

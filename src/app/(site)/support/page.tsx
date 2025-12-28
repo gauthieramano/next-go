@@ -1,5 +1,5 @@
+import type { Metadata } from "next";
 import Support from "@/components/Support";
-import { Metadata } from "next";
 
 const siteName = process.env.SITE_NAME;
 

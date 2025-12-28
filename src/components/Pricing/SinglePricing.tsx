@@ -29,17 +29,17 @@ export default function SinglePricing({ price }: any) {
 
   return (
     <div
-      className={`w-full sm:w-1/2 lg:w-1/3 ${price?.nickname === "Professional" ? "dark:border-[#2E333D] sm:border-l lg:border-x" : ""}`}
+      className={`w-full sm:w-1/2 lg:w-1/3 ${price?.nickname === "Professional" ? "sm:border-l lg:border-x dark:border-[#2E333D]" : ""}`}
     >
-      <div className="pb-20 pt-10 text-center">
+      <div className="pt-10 pb-20 text-center">
         <div className="border-b dark:border-[#2E333D]">
-          <h3 className="mb-2 font-heading text-3xl font-medium text-dark dark:text-white">
+          <h3 className="mb-2 font-heading font-medium text-3xl text-dark dark:text-white">
             {price?.nickname}
           </h3>
           <p className="pb-10 text-base text-dark-text">{price?.subtitle}</p>
         </div>
         <div className="border-b py-10 dark:border-[#2E333D]">
-          <h3 className="mb-6 flex items-end justify-center pt-2 font-heading text-base font-medium text-dark dark:text-white">
+          <h3 className="mb-6 flex items-end justify-center pt-2 font-heading font-medium text-base text-dark dark:text-white">
             ${" "}
             <sup className="-mb-2 text-[55px]">
               {" "}
@@ -54,7 +54,7 @@ export default function SinglePricing({ price }: any) {
             Lorem ipsum dolor sit ametion consectetur adipisc elit.
           </p>
         </div>
-        <ul className="space-y-4 px-6 pb-[60px] pt-10 text-left sm:px-10 md:px-8 lg:px-10 xl:px-20">
+        <ul className="space-y-4 px-6 pt-10 pb-[60px] text-left sm:px-10 md:px-8 lg:px-10 xl:px-20">
           {price?.nickname === "Starter" && (
             <>
               <SingleOffer text="100 GB Storage" status="active" />

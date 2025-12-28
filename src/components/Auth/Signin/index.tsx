@@ -1,7 +1,7 @@
 "use client";
-import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import z from "zod";
@@ -65,20 +65,20 @@ export default function Signin() {
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
               <div className="mx-auto max-w-[920px] rounded-sm border bg-white px-6 py-10 sm:p-[70px] dark:border-transparent dark:bg-[#1D232D]">
-                <h1 className="font-heading mb-3 text-2xl font-medium text-black sm:text-3xl lg:text-2xl xl:text-[40px] xl:leading-tight dark:text-white">
+                <h1 className="mb-3 font-heading font-medium text-2xl text-black sm:text-3xl lg:text-2xl xl:text-[40px] xl:leading-tight dark:text-white">
                   Sign in to your Account
                 </h1>
-                <p className="text-dark-text mb-12 text-base font-medium">
+                <p className="mb-12 font-medium text-base text-dark-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
 
-                <h3 className="font-heading text-dark mb-8 text-xl dark:text-white">
+                <h3 className="mb-8 font-heading text-dark text-xl dark:text-white">
                   Sign in with Social Media
                 </h3>
                 <div className="mb-12 flex items-center space-x-4">
                   <button
                     onClick={() => signIn("google")}
-                    className="text-dark-text flex h-[50px] w-[50px] items-center justify-center rounded-sm border text-base sm:w-auto sm:px-7 dark:border-transparent dark:bg-[#2C3443]"
+                    className="flex h-[50px] w-[50px] items-center justify-center rounded-sm border text-base text-dark-text sm:w-auto sm:px-7 dark:border-transparent dark:bg-[#2C3443]"
                   >
                     <span className="sm:pr-3">
                       <svg
@@ -138,8 +138,8 @@ export default function Signin() {
                 </div>
 
                 <div className="relative z-10 mb-8 flex items-center justify-center">
-                  <span className="absolute left-0 top-1/2 -z-10 hidden h-[1px] w-full -translate-y-1/2 bg-slate-300 sm:block dark:bg-[#2E333D]"></span>
-                  <p className="text-dark-text bg-white text-base font-medium sm:px-4 dark:bg-[#1D232D]">
+                  <span className="absolute top-1/2 left-0 -z-10 hidden h-[1px] w-full -translate-y-1/2 bg-slate-300 sm:block dark:bg-[#2E333D]"></span>
+                  <p className="bg-white font-medium text-base text-dark-text sm:px-4 dark:bg-[#1D232D]">
                     Or Sign in with your email
                   </p>
                 </div>
@@ -150,7 +150,7 @@ export default function Signin() {
                       <div className="mb-10">
                         <label
                           htmlFor="email"
-                          className="font-heading text-dark mb-3 block text-base dark:text-white"
+                          className="mb-3 block font-heading text-base text-dark dark:text-white"
                         >
                           Email Address
                         </label>
@@ -162,7 +162,7 @@ export default function Signin() {
                             setData({ ...data, email: e.target.value })
                           }
                           placeholder="jhonandrio@domain.com"
-                          className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full border-b bg-transparent py-5 text-base font-medium dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                          className="w-full border-b bg-transparent py-5 font-medium text-base text-dark placeholder-dark-text outline-hidden focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
                         />
                       </div>
                     </div>
@@ -170,7 +170,7 @@ export default function Signin() {
                       <div className="mb-10">
                         <label
                           htmlFor="password"
-                          className="font-heading text-dark mb-3 block text-base dark:text-white"
+                          className="mb-3 block font-heading text-base text-dark dark:text-white"
                         >
                           Password
                         </label>
@@ -182,7 +182,7 @@ export default function Signin() {
                             setData({ ...data, password: e.target.value })
                           }
                           placeholder="**********"
-                          className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full border-b bg-transparent py-5 text-base font-medium dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                          className="w-full border-b bg-transparent py-5 font-medium text-base text-dark placeholder-dark-text outline-hidden focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
                         />
                       </div>
                     </div>
@@ -191,7 +191,7 @@ export default function Signin() {
                       <div className="flex flex-wrap gap-10">
                         <label
                           htmlFor="checkbox"
-                          className="text-dark-text hover:text-primary flex gap-4"
+                          className="flex gap-4 text-dark-text hover:text-primary"
                         >
                           <input
                             type="checkbox"
@@ -206,7 +206,7 @@ export default function Signin() {
                                 height="8"
                                 viewBox="0 0 11 8"
                                 fill="currentColor"
-                                className="group-peer-checked:opacity-100 text-primary opacity-0"
+                                className="text-primary opacity-0 group-peer-checked:opacity-100"
                               >
                                 <path
                                   d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
@@ -221,7 +221,7 @@ export default function Signin() {
 
                         <Link
                           href="/auth/forget-password"
-                          className="text-dark-text hover:text-primary text-base"
+                          className="text-base text-dark-text hover:text-primary"
                         >
                           Forgot Password?
                         </Link>
@@ -230,7 +230,7 @@ export default function Signin() {
                     <div className="w-full px-4">
                       <button
                         type="submit"
-                        className="bg-primary flex items-center justify-center rounded-sm px-14 py-[14px] text-sm font-semibold text-white"
+                        className="flex items-center justify-center rounded-sm bg-primary px-14 py-[14px] font-semibold text-sm text-white"
                       >
                         Sign In Now
                       </button>

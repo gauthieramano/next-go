@@ -16,11 +16,11 @@ export const structuredAlgoliaHtmlData = async ({
     const c$ = load(htmlString).text();
     const data = {
       objectID: pageUrl,
-      title: title,
+      title,
       url: pageUrl,
       content: c$.slice(0, 7000),
-      type: type,
-      imageURL: imageURL,
+      type,
+      imageURL,
       updatedAt: new Date().toISOString(),
     };
 

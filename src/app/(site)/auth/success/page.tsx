@@ -1,6 +1,6 @@
-import CommonCard from "@/components/Common/CommonCard";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
+import CommonCard from "@/components/Common/CommonCard";
 
 const siteName = process.env.SITE_NAME;
 
@@ -17,7 +17,7 @@ export default function SuccessPage() {
           <CommonCard>
             <div className="relative pt-6 text-center md:pt-8">
               <span className="title"> SUCCESS </span>
-              <h1 className="mb-5 font-heading text-3xl font-semibold text-dark dark:text-white sm:text-4xl md:text-[50px] md:leading-[60px]">
+              <h1 className="mb-5 font-heading font-semibold text-3xl text-dark sm:text-4xl md:text-[50px] md:leading-[60px] dark:text-white">
                 Congratulations!
               </h1>
             </div>
@@ -27,7 +27,7 @@ export default function SuccessPage() {
             <div className="flex justify-center">
               <Link
                 href="/"
-                className="inline-flex items-center justify-center rounded-sm bg-primary px-8 py-[14px] text-sm font-semibold text-white"
+                className="inline-flex items-center justify-center rounded-sm bg-primary px-8 py-[14px] font-semibold text-sm text-white"
               >
                 Go to Home Page
               </Link>

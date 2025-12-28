@@ -14,7 +14,7 @@ export default function Pricing() {
         />
 
         <div className="relative z-10 flex flex-wrap justify-center overflow-hidden rounded-sm drop-shadow-light dark:drop-shadow-none">
-          <div className="absolute left-0 top-0 -z-10 h-full w-full bg-noise-pattern bg-cover bg-center opacity-10 dark:opacity-40"></div>
+          <div className="absolute top-0 left-0 -z-10 h-full w-full bg-center bg-cover bg-noise-pattern opacity-10 dark:opacity-40"></div>
           <div className="absolute bottom-0 left-1/2 -z-10 -translate-x-1/2">
             <svg
               width="1174"
@@ -74,7 +74,7 @@ export default function Pricing() {
         </div>
 
         <div className="pt-12 text-center">
-          <h3 className="mb-5 font-heading text-xl font-medium text-dark dark:text-white sm:text-3xl">
+          <h3 className="mb-5 font-heading font-medium text-dark text-xl sm:text-3xl dark:text-white">
             Looking for a company solution?
           </h3>
           <Link

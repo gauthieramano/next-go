@@ -1,11 +1,11 @@
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 import { structuredAlgoliaHtmlData } from "@/app/libs/crawlIndex";
 // import BlogComment from "@/components/Blog/BlogDetails/BlogComment";
 import RenderBodyContent from "@/components/Blog/BlogDetails/RenderBodyContent";
 import { getPostBySlug, imageBuilder } from "@/sanity/sanity-utils";
 import { formatDate } from "@/utils/format-date";
-import Image from "next/image";
-import Link from "next/link";
-import { notFound } from "next/navigation";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -42,7 +42,7 @@ export async function generateMetadata(props: Props) {
         title: `${post.title} | ${siteName}`,
         description: post.metadata,
         url: `${siteURL}/blog/${post?.slug?.current}`,
-        siteName: siteName,
+        siteName,
         images: [
           {
             url: post?.mainImage && imageBuilder(post.mainImage).url(),
@@ -65,12 +65,11 @@ export async function generateMetadata(props: Props) {
         url: `${siteURL}/blog/${post?.slug?.current}`,
       },
     };
-  } else {
-    return {
-      title: "Not Found",
-      description: "No blog article has been found",
-    };
   }
+  return {
+    title: "Not Found",
+    description: "No blog article has been found",
+  };
 }
 
 export default async function BlogSlugPage(props: Props) {
@@ -79,7 +78,9 @@ export default async function BlogSlugPage(props: Props) {
 
   const post = await getPostBySlug(slug);
 
-  if (!post) return notFound();
+  if (!post) {
+    return notFound();
+  }
 
   await structuredAlgoliaHtmlData({
     type: "blog",
@@ -90,25 +91,25 @@ export default async function BlogSlugPage(props: Props) {
   });
 
   return (
-    <main className="border-b pb-20 pt-[130px] lg:pb-[130px] dark:border-[#2E333D]">
+    <main className="border-b pt-[130px] pb-20 lg:pb-[130px] dark:border-[#2E333D]">
       <div
-        className="relative z-10 bg-cover bg-center bg-no-repeat py-20 lg:py-[120px]"
+        className="relative z-10 bg-center bg-cover bg-no-repeat py-20 lg:py-[120px]"
         style={{
           backgroundImage: `url(${imageBuilder(post?.mainImage || "").url()})`,
         }}
       >
         <div
-          className="absolute left-0 top-0 -z-10 h-full w-full bg-cover bg-center opacity-20 mix-blend-overlay"
+          className="absolute top-0 left-0 -z-10 h-full w-full bg-center bg-cover opacity-20 mix-blend-overlay"
           style={{ backgroundImage: "url(/images/blog/NoisePatern.svg)" }}
         ></div>
-        <div className="absolute left-0 top-0 -z-10 h-full w-full bg-[#EEF1FDEB] dark:bg-[#1D232DD9]"></div>
+        <div className="absolute top-0 left-0 -z-10 h-full w-full bg-[#EEF1FDEB] dark:bg-[#1D232DD9]"></div>
 
         <div className="px-4 text-center">
-          <h1 className="font-heading text-dark mb-8 text-3xl font-semibold md:text-[44px] md:leading-tight dark:text-white">
+          <h1 className="mb-8 font-heading font-semibold text-3xl text-dark md:text-[44px] md:leading-tight dark:text-white">
             {post?.title}
           </h1>
 
-          <dl className="text-dark-text font-heading flex flex-wrap items-center justify-center gap-10 dark:text-white">
+          <dl className="flex flex-wrap items-center justify-center gap-10 font-heading text-dark-text dark:text-white">
             {post.author?.image && (
               <>
                 <dt>

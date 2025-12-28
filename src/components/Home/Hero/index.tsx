@@ -7,17 +7,17 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative z-40 overflow-hidden pb-24 pt-28 sm:pt-36 lg:pb-[120px] lg:pt-[170px]"
+      className="relative z-40 overflow-hidden pt-28 pb-24 sm:pt-36 lg:pt-[170px] lg:pb-[120px]"
     >
       <div className="px-4 xl:container">
         <div className="-mx-4 flex flex-wrap items-center">
           <div className="w-full px-3 lg:w-1/2">
             <div className="mx-auto mb-12 max-w-[530px] text-center lg:mb-0 lg:ml-0 lg:text-left">
-              <span className="bg-primary/5 font-heading text-primary mb-8 inline-block rounded-full px-5 py-[10px] text-base dark:bg-white/10 dark:text-white">
-                <span className="bg-primary mr-2 inline-block h-2 w-2 rounded-full"></span>
+              <span className="mb-8 inline-block rounded-full bg-primary/5 px-5 py-[10px] font-heading text-base text-primary dark:bg-white/10 dark:text-white">
+                <span className="mr-2 inline-block h-2 w-2 rounded-full bg-primary"></span>
                 Next.js Starter for Business
               </span>
-              <h1 className="font-heading mb-5 text-2xl font-semibold sm:text-4xl md:text-[50px] md:leading-[60px] dark:text-white">
+              <h1 className="mb-5 font-heading font-semibold text-2xl sm:text-4xl md:text-[50px] md:leading-[60px] dark:text-white">
                 Next.js Boilerplate for Your{" "}
                 <Typewriter
                   words={["Startup", "SaaS", "Business", "Agency"]}
@@ -29,7 +29,7 @@ export default function Hero() {
                   delaySpeed={1000}
                 />
               </h1>
-              <p className="text-dark-text mb-12 text-base">
+              <p className="mb-12 text-base text-dark-text">
                 Handcrafted Next.js starter for your next - Startup, Business,
                 Agency or SaaS Website. Comes with refreshing design,
                 integrations and everything you need to kickstart your next web
@@ -38,7 +38,7 @@ export default function Hero() {
               <div className="flex flex-wrap items-center justify-center lg:justify-start">
                 <a
                   href="#features"
-                  className="bg-primary font-heading hover:bg-primary/90 inline-flex items-center rounded-sm px-6 py-[10px] text-base text-white md:px-8 md:py-[14px]"
+                  className="inline-flex items-center rounded-sm bg-primary px-6 py-[10px] font-heading text-base text-white hover:bg-primary/90 md:px-8 md:py-[14px]"
                 >
                   Get Started
                   <span className="pl-3">
@@ -58,7 +58,7 @@ export default function Hero() {
                 </a>
                 <a
                   href="#about"
-                  className="font-heading text-dark hover:text-primary dark:hover:text-primary inline-flex items-center rounded-sm px-8 py-[14px] text-base dark:text-white"
+                  className="inline-flex items-center rounded-sm px-8 py-[14px] font-heading text-base text-dark hover:text-primary dark:text-white dark:hover:text-primary"
                 >
                   <span className="pr-3">
                     <svg
@@ -77,11 +77,11 @@ export default function Hero() {
           </div>
           <div className="w-full px-4 lg:w-1/2">
             <div className="wow fadeInRight relative z-30 mx-auto h-[560px] w-full max-w-[700px] lg:ml-0">
-              <div className="absolute right-0 top-0 lg:w-11/12">
+              <div className="absolute top-0 right-0 lg:w-11/12">
                 <Image
                   src="/images/hero/image-2.png"
                   alt="hero-image"
-                  className="object-cover aspect-[1.08]"
+                  className="aspect-[1.08] object-cover"
                   width={560}
                   height={520}
                 />
@@ -94,7 +94,7 @@ export default function Hero() {
                   width={350}
                   height={420}
                 />
-                <div className="border-primary/10 bg-primary/5 absolute -right-6 -top-6 -z-10 h-full w-full border backdrop-blur-[6px] dark:border-white/10 dark:bg-white/10"></div>
+                <div className="absolute -top-6 -right-6 -z-10 h-full w-full border border-primary/10 bg-primary/5 backdrop-blur-[6px] dark:border-white/10 dark:bg-white/10"></div>
               </div>
               <div className="absolute bottom-0 left-0">
                 <svg
@@ -162,8 +162,8 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="bg-noise-pattern absolute bottom-0 left-0 -z-10 h-full w-full bg-cover bg-center opacity-10 dark:opacity-40"></div>
-      <div className="absolute right-0 top-0 -z-10">
+      <div className="absolute bottom-0 left-0 -z-10 h-full w-full bg-center bg-cover bg-noise-pattern opacity-10 dark:opacity-40"></div>
+      <div className="absolute top-0 right-0 -z-10">
         <svg
           width="1356"
           height="860"

@@ -1,9 +1,9 @@
 "use client";
 
-import SectionTitle from "@/components/Common/SectionTitle";
-import { portfolioData } from "@/static-data/portfolio";
 import { useEffect, useState } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import SectionTitle from "@/components/Common/SectionTitle";
+import { portfolioData } from "@/static-data/portfolio";
 import SinglePortfolio from "./SinglePortfolio";
 
 export default function Portfolio() {
@@ -18,12 +18,11 @@ export default function Portfolio() {
     setActiveTag(itemTag);
     if (itemTag === "All") {
       return setItems(portfolioData);
-    } else {
-      const findItems = portfolioData.filter((findItem) => {
-        return findItem.tags.includes(itemTag);
-      });
-      setItems(findItems);
     }
+    const findItems = portfolioData.filter((findItem) => {
+      return findItem.tags.includes(itemTag);
+    });
+    setItems(findItems);
   };
 
   return (
@@ -38,7 +37,7 @@ export default function Portfolio() {
         <div className="w-full">
           <div className="portfolio-btn-wrapper mb-16 flex items-center justify-center overflow-x-auto pb-2">
             <button
-              className={`${activeTag === "All" ? "active" : ""} font-heading text-dark whitespace-nowrap px-5 text-base dark:text-white`}
+              className={`${activeTag === "All" ? "active" : ""} whitespace-nowrap px-5 font-heading text-base text-dark dark:text-white`}
               onClick={() => filterItems("All")}
             >
               All
@@ -46,7 +45,7 @@ export default function Portfolio() {
             {allTag.map((tag) => (
               <button
                 key={tag}
-                className={`${activeTag === tag ? "active" : ""} font-heading text-dark whitespace-nowrap px-5 text-base capitalize dark:text-white`}
+                className={`${activeTag === tag ? "active" : ""} whitespace-nowrap px-5 font-heading text-base text-dark capitalize dark:text-white`}
                 onClick={() => filterItems(tag)}
               >
                 {tag}
@@ -59,7 +58,7 @@ export default function Portfolio() {
           <div className="w-full pt-10 text-center">
             <a
               href="#"
-              className="bg-primary font-heading hover:bg-primary/90 inline-flex items-center rounded-sm px-8 py-[14px] text-base text-white"
+              className="inline-flex items-center rounded-sm bg-primary px-8 py-[14px] font-heading text-base text-white hover:bg-primary/90"
             >
               See More Projects
               <span className="pl-3">
@@ -92,7 +91,9 @@ function Projects({ items }: { items: typeof portfolioData }) {
     setIsMounted(true);
   }, []);
 
-  if (!isMounted) return null;
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>

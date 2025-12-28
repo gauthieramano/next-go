@@ -1,5 +1,5 @@
-import SectionTitle from "../Common/SectionTitle";
 import Image from "next/image";
+import SectionTitle from "../Common/SectionTitle";
 
 export default function Brands() {
   return (
