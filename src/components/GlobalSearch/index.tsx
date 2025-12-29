@@ -1,6 +1,6 @@
 "use client";
 
-import algoliasearch from "algoliasearch";
+import { algoliasearch } from "algoliasearch";
 import Image from "next/image";
 import { useEffect } from "react";
 import { Hits, SearchBox } from "react-instantsearch";
