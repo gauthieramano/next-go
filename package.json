@@ -65,6 +65,9 @@
     "tsx": "^4.21.0",
     "typescript": "^5"
   },
+  "overrides": {
+    "jsdom": "26.1.0"
+  },
   "engines": {
     "node": ">=20"
   }
