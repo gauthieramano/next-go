@@ -11,10 +11,10 @@ export default function Support() {
                     {" "}
                     SUPPORT{" "}
                   </span>
-                  <h2 className="font-heading text-dark mb-5 text-3xl font-semibold sm:text-4xl md:text-[50px] md:leading-[60px] dark:text-white">
+                  <h2 className="mb-5 font-heading font-semibold text-3xl text-dark sm:text-4xl md:text-[50px] md:leading-[60px] dark:text-white">
                     Need Any Help? Say hello
                   </h2>
-                  <p className="text-dark-text text-base">
+                  <p className="text-base text-dark-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit
                     Donec vitae tortor aliquam ante.
                   </p>
@@ -23,7 +23,7 @@ export default function Support() {
 
               <div className="w-full px-4 lg:w-1/2">
                 <div className="flex items-center">
-                  <span className="bg-dark mr-10 h-1 w-full max-w-[200px] dark:bg-white"></span>
+                  <span className="mr-10 h-1 w-full max-w-[200px] bg-dark dark:bg-white"></span>
                   <a
                     href="mailto:info@gostartup.com"
                     className="font-heading text-dark text-xl md:text-3xl lg:text-xl xl:text-3xl dark:text-white"
@@ -38,30 +38,30 @@ export default function Support() {
             <div className="-mx-4 flex flex-wrap pt-12">
               <div className="w-full px-4 md:w-1/2 lg:w-1/4">
                 <div className="mb-6">
-                  <h3 className="font-heading text-dark mb-2 text-base sm:text-xl dark:text-white">
+                  <h3 className="mb-2 font-heading text-base text-dark sm:text-xl dark:text-white">
                     Email Address
                   </h3>
-                  <p className="text-dark-text text-base font-medium">
+                  <p className="font-medium text-base text-dark-text">
                     support@startup.com
                   </p>
                 </div>
               </div>
               <div className="w-full px-4 md:w-1/2 lg:w-1/4">
                 <div className="mb-6">
-                  <h3 className="font-heading text-dark mb-2 text-base sm:text-xl dark:text-white">
+                  <h3 className="mb-2 font-heading text-base text-dark sm:text-xl dark:text-white">
                     Phone Number
                   </h3>
-                  <p className="text-dark-text text-base font-medium">
+                  <p className="font-medium text-base text-dark-text">
                     +009 8754 3433 223
                   </p>
                 </div>
               </div>
               <div className="w-full px-4 md:w-1/2 lg:w-1/4">
                 <div className="mb-6">
-                  <h3 className="font-heading text-dark mb-2 text-base sm:text-xl dark:text-white">
+                  <h3 className="mb-2 font-heading text-base text-dark sm:text-xl dark:text-white">
                     Office Location
                   </h3>
-                  <p className="text-dark-text text-base font-medium">
+                  <p className="font-medium text-base text-dark-text">
                     76/A, Green valle, Califonia USA.
                   </p>
                 </div>
@@ -147,7 +147,7 @@ export default function Support() {
                 <div className="mb-12">
                   <label
                     htmlFor="name"
-                    className="font-heading text-dark mb-3 block text-base dark:text-white"
+                    className="mb-3 block font-heading text-base text-dark dark:text-white"
                   >
                     {" "}
                     Your Name{" "}
@@ -157,7 +157,7 @@ export default function Support() {
                     name="name"
                     id="name"
                     placeholder="Full Name"
-                    className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full border-b bg-transparent py-5 text-base font-medium dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                    className="w-full border-b bg-transparent py-5 font-medium text-base text-dark placeholder-dark-text outline-hidden focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
                   />
                 </div>
               </div>
@@ -165,7 +165,7 @@ export default function Support() {
                 <div className="mb-12">
                   <label
                     htmlFor="email"
-                    className="font-heading text-dark mb-3 block text-base dark:text-white"
+                    className="mb-3 block font-heading text-base text-dark dark:text-white"
                   >
                     {" "}
                     Email Address{" "}
@@ -175,7 +175,7 @@ export default function Support() {
                     name="email"
                     id="email"
                     placeholder="Email Address"
-                    className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full border-b bg-transparent py-5 text-base font-medium dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                    className="w-full border-b bg-transparent py-5 font-medium text-base text-dark placeholder-dark-text outline-hidden focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
                   />
                 </div>
               </div>
@@ -183,7 +183,7 @@ export default function Support() {
                 <div className="mb-12">
                   <label
                     htmlFor="phone"
-                    className="font-heading text-dark mb-3 block text-base dark:text-white"
+                    className="mb-3 block font-heading text-base text-dark dark:text-white"
                   >
                     {" "}
                     Phone (Optional){" "}
@@ -193,7 +193,7 @@ export default function Support() {
                     name="phone"
                     id="phone"
                     placeholder="Phone Number"
-                    className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full border-b bg-transparent py-5 text-base font-medium dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                    className="w-full border-b bg-transparent py-5 font-medium text-base text-dark placeholder-dark-text outline-hidden focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
                   />
                 </div>
               </div>
@@ -201,7 +201,7 @@ export default function Support() {
                 <div className="mb-12">
                   <label
                     htmlFor="subject"
-                    className="font-heading text-dark mb-3 block text-base dark:text-white"
+                    className="mb-3 block font-heading text-base text-dark dark:text-white"
                   >
                     {" "}
                     Subject{" "}
@@ -211,7 +211,7 @@ export default function Support() {
                     name="subject"
                     id="subject"
                     placeholder="Type Subject"
-                    className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full border-b bg-transparent py-5 text-base font-medium dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                    className="w-full border-b bg-transparent py-5 font-medium text-base text-dark placeholder-dark-text outline-hidden focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
                   />
                 </div>
               </div>
@@ -219,7 +219,7 @@ export default function Support() {
                 <div className="mb-10">
                   <label
                     htmlFor="message"
-                    className="font-heading text-dark mb-3 block text-base dark:text-white"
+                    className="mb-3 block font-heading text-base text-dark dark:text-white"
                   >
                     {" "}
                     Message{" "}
@@ -229,7 +229,7 @@ export default function Support() {
                     name="message"
                     id="message"
                     placeholder="Type Message"
-                    className="text-dark placeholder-dark-text outline-hidden focus:border-primary w-full resize-none border-b bg-transparent py-5 text-base font-medium dark:border-[#2C3443] dark:text-white dark:focus:border-white"
+                    className="w-full resize-none border-b bg-transparent py-5 font-medium text-base text-dark placeholder-dark-text outline-hidden focus:border-primary dark:border-[#2C3443] dark:text-white dark:focus:border-white"
                   ></textarea>
                 </div>
               </div>
@@ -237,7 +237,7 @@ export default function Support() {
               <div className="mb-12 px-4">
                 <label
                   htmlFor="supportCheckbox"
-                  className="text-dark-text hover:text-primary flex gap-4"
+                  className="flex gap-4 text-dark-text hover:text-primary"
                 >
                   <input
                     type="checkbox"
@@ -252,7 +252,7 @@ export default function Support() {
                         height="8"
                         viewBox="0 0 11 8"
                         fill="currentColor"
-                        className="group-peer-checked:opacity-100 text-primary opacity-0"
+                        className="text-primary opacity-0 group-peer-checked:opacity-100"
                       >
                         <path
                           d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
@@ -270,7 +270,7 @@ export default function Support() {
               </div>
 
               <div className="w-full px-4">
-                <button className="bg-primary font-heading hover:bg-primary/90 flex w-full items-center justify-center rounded-sm px-8 py-[14px] text-base text-white">
+                <button className="flex w-full items-center justify-center rounded-sm bg-primary px-8 py-[14px] font-heading text-base text-white hover:bg-primary/90">
                   Send Message
                 </button>
               </div>

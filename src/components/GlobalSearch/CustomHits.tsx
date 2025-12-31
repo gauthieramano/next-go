@@ -5,7 +5,7 @@ function CustomHits(props: any) {
   const { hit, setSearchModalOpen } = props;
 
   return (
-    <div className="dark:border-strokedark border-stroke border-t bg-black first-of-type:border-0">
+    <div className="border-stroke border-t bg-black first-of-type:border-0 dark:border-strokedark">
       <div className="bg-white px-[22px] py-3.5 duration-300 hover:bg-[#F9FAFB] dark:bg-black dark:hover:bg-slate-800">
         <Link
           onClick={() => setSearchModalOpen(false)}
@@ -25,11 +25,11 @@ function CustomHits(props: any) {
           )}
 
           <div>
-            <h3 className="line-clamp-1 text-base font-medium text-black dark:text-gray-400">
+            <h3 className="line-clamp-1 font-medium text-base text-black dark:text-gray-400">
               {hit.title}
             </h3>
 
-            <div className="text-dark-text line-clamp-1 text-sm">{hit.url}</div>
+            <div className="line-clamp-1 text-dark-text text-sm">{hit.url}</div>
           </div>
         </Link>
       </div>

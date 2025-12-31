@@ -1,12 +1,12 @@
 "use client";
 
-import { navbarData } from "@/static-data/navbar";
-import { onScroll } from "@/utils/scrollActive";
-import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import { navbarData } from "@/static-data/navbar";
+import { onScroll } from "@/utils/scrollActive";
 import GlobalSearchModal from "../GlobalSearch";
 import ThemeToggler from "./ThemeToggler";
 
@@ -52,10 +52,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`header absolute left-0 top-0 w-full ${stickyMenu ? "sticky-navbar" : ""}`}
+        className={`header absolute top-0 left-0 w-full ${stickyMenu ? "sticky-navbar" : ""}`}
       >
         <div className="flex w-full flex-wrap px-5 lg:flex-nowrap lg:items-center lg:px-5 xl:px-10 2xl:px-20">
-          <div className="z-99 relative max-w-[250px] pr-4 lg:w-full lg:max-w-[220px] xl:max-w-[280px]">
+          <div className="relative z-99 max-w-[250px] pr-4 lg:w-full lg:max-w-[220px] xl:max-w-[280px]">
             <Link href="/" className="inline-block">
               <Image
                 src="/images/logo/logo-dark.svg"
@@ -75,7 +75,7 @@ export default function Navbar() {
           </div>
 
           <div
-            className={`menu-wrapper dark:bg-dark fixed left-0 top-0 z-50 h-screen w-full justify-center bg-white p-5 lg:visible lg:static lg:flex lg:h-auto lg:justify-start lg:bg-transparent lg:p-0 lg:opacity-100 dark:lg:bg-transparent ${navigationOpen ? "show" : ""}`}
+            className={`menu-wrapper fixed top-0 left-0 z-50 h-screen w-full justify-center bg-white p-5 lg:visible lg:static lg:flex lg:h-auto lg:justify-start lg:bg-transparent lg:p-0 lg:opacity-100 dark:bg-dark dark:lg:bg-transparent ${navigationOpen ? "show" : ""}`}
           >
             <div className="w-full self-center">
               <nav>
@@ -98,7 +98,7 @@ export default function Navbar() {
                           }
                           target={item?.external ? "_blank" : ""}
                           onClick={navigationHandler}
-                          className={`${pathUrl === item?.href ? "active" : ""} font-heading text-dark-text hover:text-primary inline-flex items-center justify-center text-center text-base dark:hover:text-white ${item?.href?.startsWith("#") ? "menu-scroll" : ""}`}
+                          className={`${pathUrl === item?.href ? "active" : ""} inline-flex items-center justify-center text-center font-heading text-base text-dark-text hover:text-primary dark:hover:text-white ${item?.href?.startsWith("#") ? "menu-scroll" : ""}`}
                         >
                           {item?.title}
                         </Link>
@@ -106,7 +106,7 @@ export default function Navbar() {
                         <>
                           <button
                             onClick={() => setDropdownToggler(!dropdownToggler)}
-                            className="submenu-taggler font-heading text-dark-text hover:text-primary inline-flex items-center justify-center text-center text-base dark:hover:text-white"
+                            className="submenu-taggler inline-flex items-center justify-center text-center font-heading text-base text-dark-text hover:text-primary dark:hover:text-white"
                           >
                             {item?.title}
 
@@ -130,7 +130,7 @@ export default function Navbar() {
                                   <Link
                                     href={item?.href}
                                     onClick={navigationHandler}
-                                    className={`font-heading inline-flex items-center justify-center text-center text-base ${pathUrl === item?.href ? "text-primary dark:text-white" : "text-dark-text hover:text-primary dark:hover:text-white"}`}
+                                    className={`inline-flex items-center justify-center text-center font-heading text-base ${pathUrl === item?.href ? "text-primary dark:text-white" : "text-dark-text hover:text-primary dark:hover:text-white"}`}
                                   >
                                     {item?.title}
                                   </Link>
@@ -148,13 +148,13 @@ export default function Navbar() {
             <div className="absolute bottom-0 left-0 flex w-full items-center justify-between space-x-5 self-end p-5 lg:static lg:w-auto lg:self-center lg:p-0">
               {session ? (
                 <>
-                  <p className="text-dark-text whitespace-nowrap dark:text-white">
+                  <p className="whitespace-nowrap text-dark-text dark:text-white">
                     {session?.user?.name}
                   </p>
                   <button
                     aria-label="SignOut"
                     onClick={() => signOut()}
-                    className="text-dark-text hover:text-primary whitespace-nowrap font-medium"
+                    className="whitespace-nowrap font-medium text-dark-text hover:text-primary"
                   >
                     Sign Out
                   </button>
@@ -163,13 +163,13 @@ export default function Navbar() {
                 <>
                   <Link
                     href="/auth/signin"
-                    className="bg-primary font-heading hover:bg-primary/90 w-full whitespace-nowrap rounded-sm px-6 py-3 text-center text-white lg:w-auto"
+                    className="w-full whitespace-nowrap rounded-sm bg-primary px-6 py-3 text-center font-heading text-white hover:bg-primary/90 lg:w-auto"
                   >
                     Sign In
                   </Link>
                   <Link
                     href="/auth/signup"
-                    className="font-heading hover:bg-primary/90 w-full whitespace-nowrap rounded-sm bg-[#222C40] px-6 py-3 text-center text-white lg:w-auto"
+                    className="w-full whitespace-nowrap rounded-sm bg-[#222C40] px-6 py-3 text-center font-heading text-white hover:bg-primary/90 lg:w-auto"
                   >
                     Sign Up
                   </Link>
@@ -178,11 +178,11 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="absolute right-5 top-1/2 z-50 flex -translate-y-1/2 items-center lg:static lg:ml-4 lg:translate-y-0 xl:ml-6">
+          <div className="absolute top-1/2 right-5 z-50 flex -translate-y-1/2 items-center lg:static lg:ml-4 lg:translate-y-0 xl:ml-6">
             <div className="flex items-center justify-end">
               <button
                 onClick={() => setSearchModalOpen(true)}
-                className="text-dark-text hidden h-10 w-10 items-center justify-center rounded-full sm:flex dark:text-white"
+                className="hidden h-10 w-10 items-center justify-center rounded-full text-dark-text sm:flex dark:text-white"
               >
                 <svg
                   width="24"
@@ -217,7 +217,7 @@ export default function Navbar() {
 
             <button
               onClick={navigationHandler}
-              className="text-dark-text relative z-50 flex h-10 w-10 items-center justify-center lg:hidden dark:text-white"
+              className="relative z-50 flex h-10 w-10 items-center justify-center text-dark-text lg:hidden dark:text-white"
             >
               {navigationOpen ? (
                 <svg

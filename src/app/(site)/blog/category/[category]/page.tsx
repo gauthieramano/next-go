@@ -26,12 +26,11 @@ export async function generateMetadata(props: Props) {
         nocache: true,
       },
     };
-  } else {
-    return {
-      title: "Not Found",
-      description: "No category has been found",
-    };
   }
+  return {
+    title: "Not Found",
+    description: "No category has been found",
+  };
 }
 
 export default async function CategoryBlogPage(props: Props) {

@@ -1,7 +1,7 @@
-import { sendEmail } from "@/app/libs/email";
-import { prisma } from "@/app/libs/prismaDB";
 import crypto from "crypto";
 import { NextResponse } from "next/server";
+import { sendEmail } from "@/app/libs/email";
+import { prisma } from "@/app/libs/prismaDB";
 
 export async function POST(request: any) {
   const body = await request.json();

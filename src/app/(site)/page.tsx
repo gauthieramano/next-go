@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import About from "@/components/About";
 import HomeBlogSection from "@/components/Blog/HomeBlogSection";
 import Brands from "@/components/Brands";
@@ -9,7 +10,6 @@ import Testimonials from "@/components/Home/Testimonials";
 import Pricing from "@/components/Pricing";
 import Support from "@/components/Support";
 import Team from "@/components/Team";
-import { Metadata } from "next";
 import { integrations, messages } from "../../../integrations.config";
 
 const siteName = process.env.SITE_NAME;

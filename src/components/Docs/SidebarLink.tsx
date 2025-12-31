@@ -13,7 +13,7 @@ const SidebarLink = ({ post }: any) => {
           className={`flex w-full rounded-sm px-3 py-2 text-base ${
             pathUrl === `/docs/${post?.slug}`
               ? "bg-slate-50 text-black dark:bg-white/10 dark:text-white"
-              : "bg-white dark:bg-dark dark:text-white "
+              : "bg-white dark:bg-dark dark:text-white"
           }`}
         >
           {post?.title}

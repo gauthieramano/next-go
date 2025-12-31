@@ -1,7 +1,7 @@
+import { notFound } from "next/navigation";
 import { structuredAlgoliaHtmlData } from "@/app/libs/crawlIndex";
 import { getPostBySlug } from "@/app/libs/markdown";
 import markdownToHtml from "@/app/libs/markdownToHtml";
-import { notFound } from "next/navigation";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -32,12 +32,11 @@ export async function generateMetadata(props: Props) {
         },
       },
     };
-  } else {
-    return {
-      title: "Not Found",
-      description: "No blog article has been found",
-    };
   }
+  return {
+    title: "Not Found",
+    description: "No blog article has been found",
+  };
 }
 
 const DocsPost = async (props: Props) => {

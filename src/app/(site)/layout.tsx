@@ -2,11 +2,11 @@
 
 import "@/styles/globals.css";
 
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import NextTopLoader from "nextjs-toploader";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { ThemeProvider } from "next-themes";
-import { Inter } from "next/font/google";
-import NextTopLoader from "nextjs-toploader";
 import AuthProvider from "../context/AuthContext";
 import ToasterContext from "../context/ToastContext";
 

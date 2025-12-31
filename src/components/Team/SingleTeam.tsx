@@ -1,11 +1,11 @@
-import { SocialLink, Team } from "@/types/team";
 import Image from "next/image";
+import type { SocialLink, Team } from "@/types/team";
 
 export default function SingleTeam({ team }: { team: Team }) {
   return (
     <div className="w-full px-4 md:w-1/2 lg:w-1/4">
-      <div className="xs:max-w-[370px] group mx-auto mb-10 max-w-[300px] text-center">
-        <div className="aspect-360/370 relative mb-8 overflow-hidden rounded-sm">
+      <div className="group mx-auto mb-10 max-w-[300px] xs:max-w-[370px] text-center">
+        <div className="relative mb-8 aspect-360/370 overflow-hidden rounded-sm">
           <Image
             src={team?.image}
             alt={team?.name}
@@ -21,10 +21,10 @@ export default function SingleTeam({ team }: { team: Team }) {
           </div>
         </div>
         <div>
-          <h3 className="font-heading text-dark mb-1 text-xl font-medium sm:text-2xl dark:text-white">
+          <h3 className="mb-1 font-heading font-medium text-dark text-xl sm:text-2xl dark:text-white">
             {team?.name}
           </h3>
-          <p className="font-heading text-dark-text text-base">
+          <p className="font-heading text-base text-dark-text">
             {team?.designation}
           </p>
         </div>
@@ -38,7 +38,7 @@ function SocialButton({ social }: { social: SocialLink }) {
     <a
       href={social?.link}
       aria-label={social?.name}
-      className="hover:bg-primary flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white backdrop-blur-sm transition hover:border-transparent"
+      className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white backdrop-blur-sm transition hover:border-transparent hover:bg-primary"
     >
       {social?.name === "Facebook" && (
         <svg

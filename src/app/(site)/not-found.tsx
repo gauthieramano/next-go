@@ -1,5 +1,5 @@
-import Error from "@/components/Error";
 import type { Metadata } from "next";
+import Error from "@/components/Error";
 
 const siteName = process.env.SITE_NAME;
 

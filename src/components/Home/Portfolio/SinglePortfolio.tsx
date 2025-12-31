@@ -1,5 +1,5 @@
-import { Portfolio } from "@/types/portfolio";
 import Image from "next/image";
+import type { Portfolio } from "@/types/portfolio";
 
 export default function SinglePortfolio({
   portfolio,
@@ -7,7 +7,7 @@ export default function SinglePortfolio({
   portfolio: Portfolio;
 }) {
   return (
-    <div className={"grid-item"}>
+    <div className="grid-item">
       <div className="group relative overflow-hidden rounded-sm">
         <div className="old-image static">
           <Image
@@ -21,18 +21,18 @@ export default function SinglePortfolio({
         </div>
 
         <div className="absolute bottom-8 left-5 flex translate-y-8 items-center justify-between rounded-sm bg-[#000]/30 px-4 py-5 opacity-0 backdrop-blur-[30px] transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 sm:left-8 sm:px-6 lg:left-5 lg:px-4 xl:px-6 2xl:left-8">
-          <div className="border-r border-[#e9e9e9]/30 pr-4 sm:pr-5 lg:pr-4 xl:pr-5">
-            <h3 className="font-heading text-base font-medium text-white sm:text-xl lg:text-base xl:text-xl">
+          <div className="border-[#e9e9e9]/30 border-r pr-4 sm:pr-5 lg:pr-4 xl:pr-5">
+            <h3 className="font-heading font-medium text-base text-white sm:text-xl lg:text-base xl:text-xl">
               {portfolio?.title}
             </h3>
-            <p className="text-sm text-[#d9d9d9] sm:text-base lg:text-sm xl:text-base">
+            <p className="text-[#d9d9d9] text-sm sm:text-base lg:text-sm xl:text-base">
               {portfolio?.subTitle}
             </p>
           </div>
           <div className="pl-4 sm:pl-5 lg:pl-4 xl:pl-5">
             <a
               href="#"
-              className="dark:hover:us-bg-primary hover:bg-primary flex size-10 items-center justify-center rounded-full bg-[#f8f8f8]/[15%] text-white"
+              className="dark:hover:us-bg-primary flex size-10 items-center justify-center rounded-full bg-[#f8f8f8]/[15%] text-white hover:bg-primary"
             >
               <svg
                 width="20"

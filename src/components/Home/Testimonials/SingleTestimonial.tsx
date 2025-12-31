@@ -1,5 +1,5 @@
-import { Testimonial } from "@/types/testimonial";
 import Image from "next/image";
+import type { Testimonial } from "@/types/testimonial";
 
 export default function SingleTestimonial({
   testimonial,
@@ -11,21 +11,21 @@ export default function SingleTestimonial({
       <div className="-mx-4 flex flex-wrap items-center">
         <div className="order-last w-full px-4 lg:order-first lg:w-1/2">
           <div className="text-center lg:text-left">
-            <p className="font-heading text-dark-text mb-9 text-base font-light lg:text-lg xl:text-2xl">
+            <p className="mb-9 font-heading font-light text-base text-dark-text lg:text-lg xl:text-2xl">
               “{testimonial?.review}
             </p>
 
-            <h3 className="font-heading text-dark mb-1 text-xl dark:text-white">
+            <h3 className="mb-1 font-heading text-dark text-xl dark:text-white">
               {testimonial?.name}
             </h3>
-            <p className="text-dark-text text-base">
+            <p className="text-base text-dark-text">
               {testimonial?.designation}
             </p>
           </div>
         </div>
         <div className="w-full px-4 lg:w-1/2">
-          <div className="relative mx-auto mb-9 aspect-square w-full max-w-[420px] lg:mb-0 lg:mr-0">
-            <div className="absolute right-5 top-5 z-10 h-full w-full">
+          <div className="relative mx-auto mb-9 aspect-square w-full max-w-[420px] lg:mr-0 lg:mb-0">
+            <div className="absolute top-5 right-5 z-10 h-full w-full">
               <Image
                 src={testimonial?.image}
                 alt={testimonial?.name}
@@ -33,7 +33,7 @@ export default function SingleTestimonial({
                 fill
               />
             </div>
-            <div className="border-primary/10 bg-primary/5 absolute -right-5 -top-5 -z-10 h-full w-full border backdrop-blur-[6px] dark:border-white/10 dark:bg-white/10"></div>
+            <div className="absolute -top-5 -right-5 -z-10 h-full w-full border border-primary/10 bg-primary/5 backdrop-blur-[6px] dark:border-white/10 dark:bg-white/10"></div>
             <div className="absolute -right-4 bottom-20 z-40">
               <svg
                 width="72"

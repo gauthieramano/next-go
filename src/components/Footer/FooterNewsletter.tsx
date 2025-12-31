@@ -32,10 +32,10 @@ export default function FooterNewsletter() {
 
   return (
     <div className="mb-20">
-      <h3 className="font-heading text-dark mb-9 text-2xl font-medium dark:text-white">
+      <h3 className="mb-9 font-heading font-medium text-2xl text-dark dark:text-white">
         Newsletter
       </h3>
-      <p className="font-heading text-dark-text mb-6 text-base">
+      <p className="mb-6 font-heading text-base text-dark-text">
         Subscribe to receive future updates
       </p>
       <form onSubmit={handleSubmit} className="relative">
@@ -45,10 +45,10 @@ export default function FooterNewsletter() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email address"
-          className="text-dark-text outline-hidden focus:border-primary placeholder:text-dark-text w-full rounded-sm border py-3 pl-5 pr-12 text-base dark:border-transparent dark:bg-[#2C3443]"
+          className="w-full rounded-sm border py-3 pr-12 pl-5 text-base text-dark-text outline-hidden placeholder:text-dark-text focus:border-primary dark:border-transparent dark:bg-[#2C3443]"
         />
 
-        <button className="text-dark-text absolute right-0 top-0 flex h-full w-12 items-center justify-center border-l dark:border-[#1F2633]">
+        <button className="absolute top-0 right-0 flex h-full w-12 items-center justify-center border-l text-dark-text dark:border-[#1F2633]">
           <svg
             width="20"
             height="20"
