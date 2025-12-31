@@ -1,6 +1,6 @@
 import { PortableText } from "@portabletext/react";
 import { getImageDimensions } from "@sanity/asset-utils";
-import urlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
 import Image from "next/image";
 import Link from "next/link";
 import CodeWithCopy from "@/components/Common/CodeWithCopy";
@@ -14,7 +14,7 @@ const SampleImageComponent = (props: any) => {
 
   return (
     <Image
-      src={urlBuilder(config as any)
+      src={createImageUrlBuilder(config as any)
         .image(value)
         .fit("max")
         .auto("format")
