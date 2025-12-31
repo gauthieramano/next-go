@@ -1,6 +1,10 @@
-import algoliasearch from "algoliasearch";
+"use client";
+
+import { algoliasearch } from "algoliasearch";
+import Image from "next/image";
 import { useEffect } from "react";
-import { Hits, InstantSearch, SearchBox } from "react-instantsearch";
+import { Hits, SearchBox } from "react-instantsearch";
+import { InstantSearchNext } from "react-instantsearch-nextjs";
 import { integrations, messages } from "../../../integrations.config";
 import CustomHits from "./CustomHits";
 
@@ -42,10 +46,11 @@ const GlobalSearchModal = (props: Props) => {
   return (
     <div className="fixed top-0 left-0 z-99999! flex h-full min-h-screen w-full justify-center bg-[rgba(0,0,0,0.25)] px-4 py-[12vh] backdrop-blur-xs">
       <div className="modal-content relative w-full max-w-[600px] overflow-hidden rounded-xl bg-white dark:bg-dark">
-        <InstantSearch
+        <InstantSearchNext
           // insights={false}
           searchClient={algoliaClient}
           indexName={INDEX}
+          future={{ preserveSharedStateOnUnmount: true }}
         >
           <SearchBox
             placeholder="Search Entire Site | Products, Docs, Pages ..."
@@ -62,6 +67,24 @@ const GlobalSearchModal = (props: Props) => {
             }}
           />
 
+          <div className="flex justify-end gap-2 px-3 py-2">
+            <span className="text-xs">Search powered by</span>
+            <Image
+              src="/images/algolia-logo-white.svg"
+              alt="Algolia"
+              className="hidden h-auto object-contain dark:block"
+              width={80}
+              height={18}
+            />
+            <Image
+              src="/images/algolia-logo-blue.svg"
+              alt="Algolia"
+              className="block h-auto object-contain dark:hidden"
+              width={80}
+              height={18}
+            />
+          </div>
+
           <div className="max-h-full overflow-y-auto">
             {integrations?.isAlgoliaEnabled ? (
               <Hits
@@ -76,7 +99,7 @@ const GlobalSearchModal = (props: Props) => {
               messages?.algolia
             )}
           </div>
-        </InstantSearch>
+        </InstantSearchNext>
       </div>
     </div>
   );

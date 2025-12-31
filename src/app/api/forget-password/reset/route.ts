@@ -2,13 +2,13 @@ import crypto from "crypto";
 import { NextResponse } from "next/server";
 import { sendEmail } from "@/app/libs/email";
 import { prisma } from "@/app/libs/prismaDB";
+import { ENV } from "@/utils/env";
 
 export async function POST(request: any) {
-  const body = await request.json();
-  const { email } = body;
+  const { email } = await request.json();
 
   if (!email) {
-    return new NextResponse("Missing Fields", { status: 400 });
+    return NextResponse.json("Missing Fields", { status: 400 });
   }
 
   const user = await prisma.user.findUnique({
@@ -18,47 +18,47 @@ export async function POST(request: any) {
   });
 
   if (!user) {
-    throw new Error("Email does not exists");
+    return NextResponse.json("Email does not exists", { status: 400 });
   }
 
-  const resetToken = crypto.randomBytes(20).toString("hex");
-  const hashedToken = crypto
-    .createHash("sha256")
-    .update(resetToken)
-    .digest("hex");
+  const token = crypto.randomBytes(20).toString("hex");
 
-  const passwordResetTokenExp = new Date();
-  passwordResetTokenExp.setHours(passwordResetTokenExp.getHours() + 1);
+  const expirationDate = new Date();
+
+  expirationDate.setHours(expirationDate.getHours() + 1);
 
   await prisma.user.update({
     where: {
       email,
     },
     data: {
-      passwordResetToken: resetToken,
-      passwordResetTokenExp,
+      passwordResetToken: token,
+      passwordResetTokenExp: expirationDate,
     },
-  } as any);
+  });
 
-  const resetURL = `${process.env.SITE_URL}/auth/reset-password/${resetToken}`;
+  const url = `${ENV.SITE_URL}/auth/reset-password/${token}`;
+  const html = /* html */ `
+    <div>
+      <h1>You requested a password reset</h1>
+      <p>Click the link below to reset your password</p>
+      <a href="${url}" target="_blank">Reset Password</a>
+    </div>
+  `;
 
   try {
     await sendEmail({
       to: email,
       subject: "Reset your password",
-      html: ` 
-      <div>
-        <h1>You requested a password reset</h1>
-        <p>Click the link below to reset your password</p>
-        <a href="${resetURL}" target="_blank">Reset Password</a>
-      </div>
-      `,
+      html,
     });
 
     return NextResponse.json("An email has been sent to your email", {
       status: 200,
     });
   } catch (error) {
+    console.error(error);
+
     return NextResponse.json("An error has occurred. Please try again!", {
       status: 500,
     });
